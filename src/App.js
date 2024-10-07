@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Loader from './components/loaders/loader';
 
-function App() {
+const App = () => {
+  const [loading, setLoading] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handleLoadComplete = () => {
+    setIsTransitioning(true); // Iniciar la transición
+    setTimeout(() => {
+      setLoading(false);
+      setIsTransitioning(false);
+    }, 500); // Tiempo de espera para la transición
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app ${loading ? 'app--loading' : ''} ${isTransitioning ? 'app--transitioning' : ''}`}>
+      {loading && <Loader onLoadComplete={handleLoadComplete} />}
+      <div className={`app-content ${loading ? 'hidden' : ''}`}>
+        <h1>Hola, mundo!</h1>
+        <p>Hola</p>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
