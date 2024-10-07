@@ -10,7 +10,7 @@ const App = () => {
     setTimeout(() => {
       setLoading(false);
       setIsTransitioning(false);
-    }, 500); // Tiempo de espera para la transición
+    }, 570); // Tiempo de espera para la transición
   };
 
   return (
