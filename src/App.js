@@ -12,73 +12,80 @@ import CV from './components/pages/cv';
 const pageVariants = {
   initial: {
     opacity: 0,
-    x: 20, // Desplazamiento hacia abajo al entrar
+    x: 20,
   },
   in: {
     opacity: 1,
-    x: 0, // Regreso a la posición normal
+    x: 0,
   },
   out: {
     opacity: 0,
-    x: -20, // Desplazamiento hacia arriba al salir
+    x: -20,
   }
 };
 
 const pageTransition = {
   type: "tween",
-  duration: 0.4, 
-  ease: "easeInOut", 
+  duration: 0.4,
+  ease: "easeInOut",
 };
 
-const AnimatedRoutes = ({ loading }) => {
+const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
   const location = useLocation(); 
+  const isHomePage = location.pathname === '/'; 
+
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <motion.div
-              layout
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <Home loading={loading}/>
-            </motion.div>
-          }
-        />
-        <Route
-          path="/cv"
-          element={
-            <motion.div
-              layout
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <CV />
-            </motion.div>
-          }
-        />
-      </Routes>
-    </AnimatePresence>
+    <div>
+      {isHomePage && <AnimatedBackground loading={hasAnimatedBackground} />}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Home loading={loading}/>
+              </motion.div>
+            }
+          />
+          <Route
+            path="/cv"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <CV />
+              </motion.div>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
+    </div>
   );
 };
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [hasAnimatedBackground, setHasAnimatedBackground] = useState(false);
 
   const handleLoadComplete = () => {
     setIsTransitioning(true);
     setTimeout(() => {
       setLoading(false);
       setIsTransitioning(false);
+      setHasAnimatedBackground(true);
     }, 570);
   };
 
@@ -86,10 +93,9 @@ const App = () => {
     <div className={`app ${loading ? 'app--loading' : ''} ${isTransitioning ? 'app--transitioning' : ''}`}>
       {loading && <Loader onLoadComplete={handleLoadComplete} />}
       <div className={`app-content ${loading ? 'hidden' : ''}`}>
-        <AnimatedBackground />
         <Router>
           <Navbar />
-          <AnimatedRoutes loading={loading}/> 
+          <AnimatedRoutes loading={loading} hasAnimatedBackground={hasAnimatedBackground}/> 
         </Router>
       </div>
     </div>

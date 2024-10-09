@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const AnimatedBackground = () => {
+const AnimatedBackground = ({ loading }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (!loading) {
+      // Iniciar la animación solo cuando loading sea false
+      setIsAnimating(true);
+    }
+  }, [loading]);
+
   return (
     <svg
       style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
-      viewBox="0 0 1600 1000" 
+      viewBox="0 0 1600 1000"
     >
       <defs>
         <pattern id="animatedPattern" patternUnits="userSpaceOnUse" width="100%" height="1000">
@@ -15,6 +24,7 @@ const AnimatedBackground = () => {
               to="600"
               dur="6s"
               fill="freeze"
+              begin={isAnimating ? "0s" : "indefinite"} 
             />
           </circle>
 
@@ -27,6 +37,7 @@ const AnimatedBackground = () => {
               to="1, 1"
               dur="6s"
               fill="freeze"
+              begin={isAnimating ? "0s" : "indefinite"} 
             />
           </rect>
 
@@ -38,10 +49,19 @@ const AnimatedBackground = () => {
           <line className="line-vertical-left" x1="0" y1="0" x2="0" y2="1000" stroke="#8bacee" strokeWidth="1.5">
             <animate
               attributeName="x1"
-              from="250"
+              from="200"
               to="0"
               dur="6s"
               fill="freeze"
+              begin={isAnimating ? "0s" : "indefinite"} 
+            />
+            <animate
+              attributeName="x2"
+              from="200"
+              to="0"
+              dur="6s"
+              fill="freeze"
+              begin={isAnimating ? "0s" : "indefinite"} 
             />
           </line>
           <line className="line-vertical-right" x1="1600" y1="0" x2="1600" y2="1000" stroke="#8bacee" strokeWidth="1.5">
@@ -51,6 +71,15 @@ const AnimatedBackground = () => {
               to="1600"
               dur="6s"
               fill="freeze"
+              begin={isAnimating ? "0s" : "indefinite"} 
+            />
+            <animate
+              attributeName="x2"
+              from="1200"
+              to="1600"
+              dur="6s"
+              fill="freeze"
+              begin={isAnimating ? "0s" : "indefinite"} 
             />
           </line>
         </pattern>

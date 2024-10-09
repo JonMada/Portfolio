@@ -18,7 +18,7 @@ const Loader = ({ onLoadComplete }) => {
         }
         return prevProgress + 1;
       });
-    }, 30);
+    }, 25);
 
     return () => clearInterval(interval);
   }, [onLoadComplete]);
