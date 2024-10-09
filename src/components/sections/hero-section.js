@@ -8,8 +8,8 @@ const Hero = ({ isHeroVisible }) => {
     if (isHeroVisible) {
       const text = baffle(textRef.current);
       text.set({
-        characters: '█▒░▒▒█░▒▒█▓▒▒▒░░▒▒▓▒█░░█▒▒▒▒▒▒▒▒▒░▒▒▒▒',
-        speed: 90,
+        characters: '█▒░▒▒█░▒▒█▓▒▒▒░░▒▒▓▒█░░█▒▒▒▒▒▒▒▒▒░▒▒▒▒█░▒▒█▓█▒░▒▒█░▒▒▒▒▒▒▒▒░▒▒▒▒█░▒▒█▓█▒░▒▒█░▒',
+        speed: 85,
       });
 
       text.start();

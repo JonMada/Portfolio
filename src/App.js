@@ -80,6 +80,7 @@ const App = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [hasAnimatedBackground, setHasAnimatedBackground] = useState(false);
 
+
   const handleLoadComplete = () => {
     setIsTransitioning(true);
     setTimeout(() => {

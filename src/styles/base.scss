@@ -14,16 +14,37 @@ body {
   font-style: normal;
   background-color: #1F42E3; 
   color: #fff; 
+  overflow: hidden; 
 }
 
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
 
 .app-content {
   transition: opacity 0.5s ease-in-out; 
   opacity: 1; 
   display: flex;
   justify-content: space-around;
+  height: 100vh; 
+  overflow-y: auto; 
 }
 
 .hidden {
   opacity: 0; 
+}
+
+
+.app-content::-webkit-scrollbar {
+  display: none; 
+}
+
+.app-content {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
