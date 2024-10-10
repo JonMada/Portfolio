@@ -1,9 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import icon from '../../assets/images/icon.png'; 
 
-
 const Navbar = () => {
+  const location = useLocation();
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  // Verifica si estamos en la página Home
+  const isHomePage = location.pathname === '/';
+
+  // Función para abrir y cerrar el modal
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
+  // Función para cerrar el modal
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-icon">
@@ -13,45 +28,95 @@ const Navbar = () => {
       </div>
 
       <div className='nav-bar-links'>
-
-        <div className='social-media-links'>
-            <div className="navbar-linkedin">
+        {/* Mostrar enlaces solo en la página Home */}
+        {isHomePage ? (
+          <>
+            <div className='social-media-links'>
+              <div className="navbar-linkedin">
                 <a 
-                href="https://www.linkedin.com/in/jon-madariaga-ortega" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/jon-madariaga-ortega" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                LinkedIn
+                  LinkedIn
                 </a>
-            </div>
+              </div>
 
-            <div className="navbar-github">
+              <div className="navbar-github">
                 <a 
-                href="https://github.com/JonMada" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                  href="https://github.com/JonMada" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                GitHub
+                  GitHub
                 </a>
+              </div>
             </div>
-        </div>
-       
 
-        <div className='navbar-list'>
-            <div className="navbar-item">
-            <Link to="/cv">About me</Link>
+            <div className='navbar-list'>
+              <div className="navbar-item">
+                <Link to="/cv">About me</Link>
+              </div>
+              <div className="navbar-item">
+                <Link to="/seccion2">Sección 2</Link>
+              </div>
+              <div className="navbar-item">
+                <Link to="/seccion3">Sección 3</Link>
+              </div>
             </div>
-            <div className="navbar-item">
-            <Link to="/seccion2">Sección 2</Link>
+          </>
+        ) : (
+          !isModalOpen && ( 
+            <div className="navbar-item menu-modal-link" onClick={toggleModal}>
+              {/* Botón de menú que abre el modal */}
+              <span>Menu</span>
             </div>
-            <div className="navbar-item">
-            <Link to="/seccion3">Sección 3</Link>
-            </div>
-        </div>
-        
-
+          )
+        )}
       </div>
-    
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <div className='social-media-links'>
+              <div className="navbar-linkedin">
+                <a 
+                  href="https://www.linkedin.com/in/jon-madariaga-ortega" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={closeModal}
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              <div className="navbar-github">
+                <a 
+                  href="https://github.com/JonMada" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={closeModal}
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <div className='navbar-list'>
+              <div className="navbar-item">
+                <Link to="/cv" onClick={closeModal}>About me</Link>
+              </div>
+              <div className="navbar-item">
+                <Link to="/seccion2" onClick={closeModal}>Sección 2</Link>
+              </div>
+              <div className="navbar-item">
+                <Link to="/seccion3" onClick={closeModal}>Sección 3</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

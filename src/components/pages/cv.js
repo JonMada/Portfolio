@@ -11,7 +11,7 @@ const SkillBar = ({ skill, level, isVisible }) => {
           className="skill-progress"
           style={{
             width: isVisible ? `${level}%` : '0%', // Se rellena cuando es visible
-            transition: 'width 2s ease-in-out',
+            transition: 'width 1.3s ease-in-out',
           }}
         ></div>
       </div>
@@ -22,6 +22,7 @@ const SkillBar = ({ skill, level, isVisible }) => {
 const CV = () => {
   const [skillsVisible, setSkillsVisible] = useState(false); 
   const skillsRef = useRef(null);
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
