@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     max-width: 50%;
-    gap: 55px;
+    gap: 70px;
     padding: 50px 0; 
     margin: 0 auto;
 }
@@ -93,7 +93,7 @@
 
 .section h2 {
     border-bottom: 2px solid white; 
-    padding-bottom: 15px; 
+    padding-bottom: 5px; 
     margin-bottom: 15px; 
     font-size: 1.5;
 }
@@ -128,8 +128,8 @@
     color: white;
     border: 1px solid #e0e0e0;
     padding: 10px 20px;
-    display: flex; /* Cambia a flexbox */
-    justify-content: center; /* Centra el contenido horizontalmente */
+    display: flex; 
+    justify-content: center; 
     align-items: center; 
     overflow: hidden;
     text-decoration: none;
