@@ -8,6 +8,7 @@ const Navbar = () => {
 
   // Verifica si estamos en la página Home
   const isHomePage = location.pathname === '/';
+  const isWorksPage = location.pathname === '/works';
 
   // Función para abrir y cerrar el modal
   const toggleModal = () => {
@@ -20,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isWorksPage ? 'navbar--inverted' : ''}`}>
       <div className="navbar-icon">
         <Link to="/">
           <img src={icon} alt="Icon" className="navbar-logo" />
@@ -58,7 +59,7 @@ const Navbar = () => {
                 <Link to="/cv">About me</Link>
               </div>
               <div className="navbar-item">
-                <Link to="/seccion2">Sección 2</Link>
+                <Link to="/works">Works</Link>
               </div>
               <div className="navbar-item">
                 <Link to="/seccion3">Sección 3</Link>
@@ -108,7 +109,7 @@ const Navbar = () => {
                 <Link to="/cv" onClick={closeModal}>About me</Link>
               </div>
               <div className="navbar-item">
-                <Link to="/seccion2" onClick={closeModal}>Sección 2</Link>
+                <Link to="/works" onClick={closeModal}>Works</Link>
               </div>
               <div className="navbar-item">
                 <Link to="/seccion3" onClick={closeModal}>Sección 3</Link>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -8,6 +8,7 @@ import Navbar from './components/navigation/navbar';
 
 import Home from './components/pages/home';
 import CV from './components/pages/cv';
+import Works from './components/pages/works';
 
 const pageVariants = {
   initial: {
@@ -33,6 +34,24 @@ const pageTransition = {
 const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
   const location = useLocation(); 
   const isHomePage = location.pathname === '/'; 
+  const isWorksPage = location.pathname === '/works';
+
+  
+  useEffect(() => {
+    if (isWorksPage) {
+      document.body.style.backgroundColor = '#fff'; 
+      document.body.style.color = '#000'; 
+    } else {
+      document.body.style.backgroundColor = '#1F42E3'; 
+      document.body.style.color = '#fff'; 
+    }
+
+    
+    return () => {
+      document.body.style.backgroundColor = '';
+      document.body.style.color = '';
+    };
+  }, [isWorksPage]);
 
   return (
     <div>
@@ -66,6 +85,22 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 transition={pageTransition}
               >
                 <CV />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/works"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Works loading={loading}/>
               </motion.div>
             }
           />
