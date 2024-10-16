@@ -2,6 +2,8 @@ import React from 'react';
 
 import WorksTitle from '../sections/works/title';
 import WorksFilter from '../sections/works/filter';
+import Projects from '../sections/works/projects';
+
 
 const Works = ({ loading }) => {
     return (
@@ -10,6 +12,7 @@ const Works = ({ loading }) => {
                 <>
                     <WorksTitle loading={loading} />
                     <WorksFilter />
+                    <Projects />
                 </>
             ) : null}
         </div>
