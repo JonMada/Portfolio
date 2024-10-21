@@ -9,6 +9,7 @@ import Navbar from './components/navigation/navbar';
 import Home from './components/pages/home';
 import CV from './components/pages/cv';
 import Works from './components/pages/works';
+import ProjectDetails from './components/sections/works/project-details';
 
 const pageVariants = {
   initial: {
@@ -34,12 +35,12 @@ const pageTransition = {
 const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
   const location = useLocation(); 
   const isHomePage = location.pathname === '/'; 
-  const isWorksPage = location.pathname === '/works';
+  const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
 
   
   useEffect(() => {
     if (isWorksPage) {
-      document.body.style.backgroundColor = '#fff'; 
+      document.body.style.backgroundColor = '#f8f8f8'; 
       document.body.style.color = '#000'; 
     } else {
       document.body.style.backgroundColor = '#1F42E3'; 
@@ -104,6 +105,23 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
               </motion.div>
             }
           />
+
+          <Route
+            path="/project/:id"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <ProjectDetails />
+              </motion.div>
+            }
+          />   
+
         </Routes>
       </AnimatePresence>
     </div>

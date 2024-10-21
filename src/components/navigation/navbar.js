@@ -8,7 +8,7 @@ const Navbar = () => {
 
   // Verifica si estamos en la página Home
   const isHomePage = location.pathname === '/';
-  const isWorksPage = location.pathname === '/works';
+  const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
 
   // Función para abrir y cerrar el modal
   const toggleModal = () => {

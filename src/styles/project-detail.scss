@@ -1,0 +1,53 @@
+.project-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; 
+    overflow: hidden; 
+    width: calc(100vw - 600px); 
+    padding-bottom: 50px;
+}
+
+.project-screenshots {
+    position: relative; 
+    margin-top: -5px;
+}
+
+
+.button-container {
+    position: absolute; 
+    bottom: 70px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 10; 
+
+    .visit-resource-button {
+        padding: 20px 20px; 
+        background-color: #1F42E3; 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        text-decoration: none; 
+        transition: background-color 0.3s ease;
+        width: 110px; 
+        text-align: center; 
+        font-size: 1.1em;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    
+        /* Efecto hover */
+        &:hover {
+            background-color: #8bacee; 
+            z-index: 20; 
+        }
+    }
+}
+
+.project-details-section {
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: -20px;
+    line-height: 39px;
+    text-align: justify;
+}
+
+
+

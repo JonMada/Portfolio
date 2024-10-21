@@ -4,10 +4,10 @@ import projectData from '../../../data/project.js';
 
 const Projects = () => {
     const navigate = useNavigate();
-    const [hoveredProject, setHoveredProject] = useState(null); // Estado para controlar el hover
+    const [hoveredProject, setHoveredProject] = useState(null); 
 
-    const handleProjectClick = (id) => {
-        navigate(`/project/${id}`); 
+    const handleProjectClick = (project) => {
+        navigate(`/project/${project.id}`, {state: {project}}) ; 
     };
 
     return (
@@ -16,7 +16,7 @@ const Projects = () => {
                 <div 
                     key={project.id} 
                     className="project-card" 
-                    onClick={() => handleProjectClick(project.id)} 
+                    onClick={() => handleProjectClick(project)} 
                     onMouseEnter={() => setHoveredProject(project.id)} 
                     onMouseLeave={() => setHoveredProject(null)} 
                 >

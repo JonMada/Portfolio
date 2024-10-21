@@ -11,7 +11,7 @@ const projectData = [
         "id": 1,
         "title": "ETXELIT - Book Management System",
         "description": "ETXELIT is a full-stack book management system that allows users to add, view, update, and delete book information. Developed as part of the Full Stack program at DevCamp by Bottega University.",
-        "details": "The project features a dynamic and modern user interface built with React and SCSS, along with a robust backend developed using Python and FastAPI. Data is stored in a PostgreSQL database and managed via a complete CRUD system. The project also leverages Git for version control, enabling efficient development.",
+       "details": "The system features a clean and user-friendly interface built with React and SCSS, ensuring a smooth user experience. On the backend, Python and FastAPI are utilized to handle data operations, with PostgreSQL serving as the database to store all book-related information securely. Users can sign up to create personal accounts, allowing them to add, view, update, and delete their book entries with ease. The project includes a complete CRUD functionality, making it simple for users to manage their libraries. Version control is managed with Git, which enhances collaboration and tracking throughout the development process.",
         "technologies": {
         "frontend": ["React", "SCSS", "NPM"],
         "backend": ["Python", "FastAPI", "PostgreSQL"],

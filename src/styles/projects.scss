@@ -1,7 +1,6 @@
 .projects-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
     align-items: center;
     margin-top: 60px;
 
@@ -11,27 +10,27 @@
         align-items: flex-start;
         cursor: pointer;
         height: 100%;
-        overflow: hidden;
+        margin: 50px;
         position: relative;
 
         p {
             font-size: 1.2em;
             margin: 0;
-            margin-bottom: 8px;
+            margin-bottom: 13px;
         }
 
         img {
-            width: 99%;
+            width: 100%;
             height: auto;
             object-fit: cover;
             transition: filter 0.3s ease; 
             border-radius: 5px;
-            border: 1px solid black;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
         }
 
         .project-description {
             position: absolute;
-            top: 50%; 
+            top: 42%; 
             left: 50%; 
             color: white;
             transform: translate(-50%, -50%);
@@ -39,10 +38,12 @@
             opacity: 0;
             transition: 0.3s ease; 
             z-index: 1; 
-            font-size: 1.3em;
+            font-size: 1.2em;
             line-height: 35px;
             text-align:center;
             width:fit-content;
+            width: 70%; /* Ajusta según sea necesario */
+            word-wrap: break-word; /* Para evitar problemas de texto largo */
         
         }
 
@@ -52,6 +53,7 @@
 
         &:hover .project-description {
             opacity: 1; 
+            transform: translate(-50%, -50%);
         }
     }
 }
