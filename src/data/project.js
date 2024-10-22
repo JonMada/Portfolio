@@ -54,6 +54,7 @@ const projectData = [
         "tags": ["React", "Python", "Full Stack", "CRUD", "Responsive Design"],
         "completionDate": "September 2024"
     }
+    
 ]
 
   

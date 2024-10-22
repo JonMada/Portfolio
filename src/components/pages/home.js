@@ -4,10 +4,8 @@ import Hero from '../sections/hero-section';
 const Home = ({ loading }) => {
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
-  useEffect(() => {
-    console.log('Loading state changed:', loading); // Verificar el estado de loading
+  useEffect(() => { 
     if (loading === false) {
-      console.log('Setting isHeroVisible to true'); // Verificar cuándo se establece
       setIsHeroVisible(true);
     }
   }, [loading]);

@@ -14,9 +14,12 @@
         position: relative;
 
         p {
-            font-size: 1.2em;
+            font-size: 1.1em;
+            font-weight: 500;
             margin: 0;
             margin-bottom: 13px;
+            word-spacing: 4px;
+            letter-spacing: 2px;
         }
 
         img {
@@ -38,12 +41,12 @@
             opacity: 0;
             transition: 0.3s ease; 
             z-index: 1; 
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 35px;
             text-align:center;
             width:fit-content;
-            width: 70%; /* Ajusta según sea necesario */
-            word-wrap: break-word; /* Para evitar problemas de texto largo */
+            width: 70%; 
+            word-wrap: break-word; 
         
         }
 

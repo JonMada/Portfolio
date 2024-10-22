@@ -45,6 +45,7 @@ const ProjectDetails = () => {
         removeArrowOnDeviceType: ["tablet", "mobile"], 
     };
 
+
     return (
         <div className="project-details">
             <h1>{project.title}</h1>
@@ -74,6 +75,17 @@ const ProjectDetails = () => {
                     >
                         Visit Resource
                     </a>
+
+                    <a 
+                        href={project.codeLink[0]} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="visit-resource-button"
+                    >
+                        Code Repos
+                    </a>
+
+                 
                 </div>
             </section>
 
