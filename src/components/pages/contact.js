@@ -49,6 +49,7 @@ const Contact = () => {
 
     return (
         <div className='contact-wrapper'>
+            <div className='contact-title'>LET'S TALK</div>
 
             <form onSubmit={handleSubmit}>
                 <div className='two-col'>
@@ -61,6 +62,7 @@ const Contact = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
+                                placeholder='Enter your name'
                             />
                         </label>
                     </div>
@@ -73,6 +75,7 @@ const Contact = () => {
                                 value={formData.surname}
                                 onChange={handleChange}
                                 required
+                                placeholder='Enter your surname'
                             />
                         </label>
                     </div>
@@ -88,6 +91,7 @@ const Contact = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
+                                placeholder='Enter your email'
                             />
                         </label>
                     </div>
@@ -100,6 +104,7 @@ const Contact = () => {
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
                                 required
+                                placeholder='Enter your phone number'
                             />
                         </label>
                     </div>
@@ -113,6 +118,7 @@ const Contact = () => {
                             value={formData.message}
                             onChange={handleChange}
                             required
+                            placeholder='Your message'
                         />
                     </label>
                 </div>
