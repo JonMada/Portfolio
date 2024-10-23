@@ -10,6 +10,7 @@ import Home from './components/pages/home';
 import CV from './components/pages/cv';
 import Works from './components/pages/works';
 import ProjectDetails from './components/sections/works/project-details';
+import Contact from './components/pages/contact';
 
 const pageVariants = {
   initial: {
@@ -118,6 +119,22 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 transition={pageTransition}
               >
                 <ProjectDetails />
+              </motion.div>
+            }
+          />   
+
+          <Route
+            path="/contact"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Contact />
               </motion.div>
             }
           />   

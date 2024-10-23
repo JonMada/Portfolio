@@ -1,0 +1,69 @@
+.contact-wrapper {
+    width: calc(100vw - 600px);
+    margin-top: 210px;
+    display: flex;
+    justify-content: center;
+
+    form {
+        width: 100%;
+        font-size: 1.5em;
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 15px;
+            grid-gap: 15px;
+    
+            div {
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px
+                }
+
+                input {
+                    height: 50px;
+                }
+            }
+        }
+
+        .one-col {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin: 15px;
+            grid-gap: 15px;
+            justify-items: flex-start;
+            
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    gap:10px;
+                    width: 100%;
+                }
+
+                textarea {
+                    height: 250px;
+                    overflow: auto;
+                    resize: none;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+        }
+
+        .btn-container {
+            display: flex;             
+            justify-content: flex-end; 
+            margin: 15px;  
+             
+
+            button {
+                padding: 20px;
+                font-size: 1.2em;  
+            
+            }
+        }
+
+    }
+
+}

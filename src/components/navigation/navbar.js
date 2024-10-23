@@ -62,7 +62,7 @@ const Navbar = () => {
                 <Link to="/works">Works</Link>
               </div>
               <div className="navbar-item">
-                <Link to="/seccion3">Sección 3</Link>
+                <Link to="/contact">Contact</Link>
               </div>
             </div>
           </>
@@ -112,7 +112,7 @@ const Navbar = () => {
                 <Link to="/works" onClick={closeModal}>Works</Link>
               </div>
               <div className="navbar-item">
-                <Link to="/seccion3" onClick={closeModal}>Sección 3</Link>
+                <Link to="/contact" onClick={closeModal}>Contact</Link>
               </div>
             </div>
           </div>
