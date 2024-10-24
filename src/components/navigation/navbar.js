@@ -9,6 +9,7 @@ const Navbar = () => {
   // Verifica si estamos en la página Home
   const isHomePage = location.pathname === '/';
   const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
+  const isPolicyPage = location.pathname === '/privacy-policy';
 
   // Función para abrir y cerrar el modal
   const toggleModal = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isWorksPage ? 'navbar--inverted' : ''}`}>
+    <nav className={`navbar ${isWorksPage || isPolicyPage ? 'navbar--inverted' : ''}`}>
       <div className="navbar-icon">
         <Link to="/">
           <img src={icon} alt="Icon" className="navbar-logo" />

@@ -11,6 +11,7 @@ import CV from './components/pages/cv';
 import Works from './components/pages/works';
 import ProjectDetails from './components/sections/works/project-details';
 import Contact from './components/pages/contact';
+import PrivacyPolicy from './components/pages/privacy-policy';
 
 const pageVariants = {
   initial: {
@@ -37,10 +38,11 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
   const location = useLocation(); 
   const isHomePage = location.pathname === '/'; 
   const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
+  const isPolicyPage = location.pathname ==='/privacy-policy';
 
   
   useEffect(() => {
-    if (isWorksPage) {
+    if (isWorksPage || isPolicyPage) {
       document.body.style.backgroundColor = '#f8f8f8'; 
       document.body.style.color = '#000'; 
     } else {
@@ -53,7 +55,7 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
       document.body.style.backgroundColor = '';
       document.body.style.color = '';
     };
-  }, [isWorksPage]);
+  }, [isWorksPage, isPolicyPage]);
 
   return (
     <div>
@@ -137,7 +139,23 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 <Contact />
               </motion.div>
             }
-          />   
+          /> 
+
+          <Route
+            path="/privacy-policy"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <PrivacyPolicy />
+              </motion.div>
+            }
+          />     
 
         </Routes>
       </AnimatePresence>

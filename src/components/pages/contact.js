@@ -122,6 +122,12 @@ const Contact = () => {
                         />
                     </label>
                 </div>
+                <div className='privacyPolicy'>
+                    <label>
+                        <input type="checkbox" name="privacyPolicy" required/>
+                        I have read and agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a>*
+                    </label>
+                </div>
                 <div className='btn-container'>
                     <button type="submit">Send Message</button>
                 </div>

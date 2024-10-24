@@ -16,6 +16,7 @@
         margin: 0;
         text-align: center;
         justify-content: center;
+
     }
 
     form {
@@ -118,11 +119,29 @@
 
             button {
                 padding: 20px;
-                font-size: 1.2em;  
+                font-size: 1em;
+                background-color: #1F42E3;  
+                border: 1px solid white;
+                color: white;
+                
+
+                &:hover {
+                    outline: 1px solid white;
+                }
             
             }
         }
 
+        .privacyPolicy {
+            padding: 15px;
+            font-size: 0.7em;
+            margin-top: -20px;
+
+            a {
+                color: white
+                ;
+            }
+        }
     }
 
 }
