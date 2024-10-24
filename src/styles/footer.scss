@@ -1,0 +1,82 @@
+.footer {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    font-size: 1.2em;
+    margin-top: 300px;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+
+    .footer-content {
+        word-spacing: 6px;
+        letter-spacing: 6px;
+        width: calc(100vw - 600px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 70px;
+    }
+
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        margin-bottom: 50px;
+
+        a {
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid transparent;
+            padding: 5px;
+
+            &:hover {
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+
+        a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+
+            &:hover {
+                background-color: #8bacee;
+            }
+        }
+    }
+
+    // Cambios para privacy-footer
+    &.privacy-footer {
+        .nav-links a {
+            color: black;
+            border: 1px solid transparent;
+
+            &:hover {
+                border-bottom: 1px solid black;
+            }
+        }
+
+        .footer-links a {
+            color: black; 
+            border: 1px solid black;
+
+            &:hover {
+                color: white;
+                background-color: black;
+            }
+        }
+    }
+}

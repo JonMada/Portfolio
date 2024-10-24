@@ -1,3 +1,11 @@
+@keyframes blink-two {
+    0% { background-color: white; color: black }
+    25% { background-color: #1F42E3; color: white }
+    50% { background-color: white; color: black } 
+    75% { background-color: #1F42E3; color: white } 
+    100% { background-color: white; color: black } 
+  }
+
 .privacy {
     display: flex;
     flex-direction: column;
@@ -19,6 +27,8 @@
         box-sizing:content-box;
         display: flex;
         justify-content: center;
+        animation: blink-two 1.2s ease forwards;
+        animation-delay: 4s;
     }
 
     .content {

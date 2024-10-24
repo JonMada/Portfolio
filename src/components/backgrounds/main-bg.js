@@ -92,18 +92,18 @@ const AnimatedBackground = ({ loading }) => {
       />
 
       <rect
-        x="-10"
+        x="-7"
         y="490"
-        width="20"
-        height="20"
-        fill="#8bacee"
+        width="15"
+        height="15"
+        fill="white"
       />
       <rect
-        x="1590"
+        x="1592"
         y="490"
-        width="20"
-        height="20"
-        fill="#8bacee"
+        width="15"
+        height="15"
+        fill="white"
       />
     </svg>
   );

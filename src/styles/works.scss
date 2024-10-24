@@ -1,8 +1,16 @@
 .works-page {
-    width: calc(100vw - 600px);
+    width: 100vw;
     margin-top: 190px;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    overflow: hidden;
+    align-items: center;
+
+
+    .works-container {
+        width: calc(100vw - 600px);
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        overflow: hidden;
+    }
 }

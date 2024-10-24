@@ -30,10 +30,10 @@
 .nav-bar-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 150px;
+    grid-gap: 110px;
     height: 100%;
     width: 800px;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-top: 20px;
     align-content: center;
     justify-items: center;
@@ -73,17 +73,42 @@
 
 /*Efecto menu*/
 
-.navbar-item span {
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    padding: 9px;
-    transition: 0.5s ease;
+.navbar-item {
+    position: relative; // Asegúrate de que el contenedor sea relativo para posicionar los pseudoelementos
 
-    &:hover {
-        border: 1px solid rgb(255, 255, 255);
-        border-radius: 5px;
+    span {
+        position: relative; // Necesario para los pseudoelementos
+        border: 1px solid rgba(255, 255, 255, 0);
+        padding: 9px;
+        transition: border 0.5s ease;
+
+        // Agrega los corchetes como pseudoelementos
+        &::before {
+            content: '[';
+            position: absolute; 
+            left: -2px; 
+            transition: transform 0.5s ease; 
+        }
+
+        &::after {
+            content: ']';
+            position: absolute; 
+            right: -2px; 
+            transition: transform 0.5s ease; 
+        }
+
+
+        
+        &:hover::before {
+            transform: translateX(-8px); 
+        }
+
+        &:hover::after {
+            transform: translateX(8px); 
+        }
     }
 }
+
 
 /* Cambiar el color a negro en hover */
 .navbar-linkedin a:hover,
@@ -144,7 +169,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: auto;
-    width: 800px;
+    width: 750px;
   }
   
   
@@ -181,20 +206,15 @@
 .navbar--inverted .navbar-item a,
 .navbar--inverted .social-media-links  a,
 .navbar--inverted .social-media-links  a{
-    color: #000; 
+    color: white; 
 }
 
 .navbar--inverted .navbar-item span {
     color: #000;
     border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 5px;
+    
     padding: 9px;
     transition: 0.5s ease;
-
-    &:hover {
-        border: 1px solid rgb(0, 0, 0);
-        border-radius: 5px;
-    }
 }
 
 /* Invertir colores en hover */

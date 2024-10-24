@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Footer from '../sections/footer';
+
 const PrivacyPolicy = () => {
     return (
         <div className='privacy'>
@@ -99,6 +101,7 @@ const PrivacyPolicy = () => {
                 <p>Email: <a href="mailto:jonmadariaga93@gmail.com" style={{ color: '#1F42E3' }}>jonmadariaga93@gmail.com</a></p>
                 <p>We will respond to your inquiry as soon as possible, typically within 48 hours. Thank you for trusting us with your information.</p>
             </div>
+            <Footer/>
         </div>
     );
 };

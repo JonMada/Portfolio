@@ -13,10 +13,12 @@ import ProjectDetails from './components/sections/works/project-details';
 import Contact from './components/pages/contact';
 import PrivacyPolicy from './components/pages/privacy-policy';
 
-const pageVariants = {
+import ScrollToTop from './components/scroll/scrollTop';
+
+const slideVariants = {
   initial: {
     opacity: 0,
-    x: 20,
+    x: '100%', 
   },
   in: {
     opacity: 1,
@@ -24,15 +26,16 @@ const pageVariants = {
   },
   out: {
     opacity: 0,
-    x: -20,
-  }
+    x: '-100%', 
+  },
 };
 
-const pageTransition = {
-  type: "tween",
-  duration: 0.4,
-  ease: "easeInOut",
+const slideTransition = {
+  type: "spring",
+  stiffness: 300,
+  damping: 30,
 };
+
 
 const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
   const location = useLocation(); 
@@ -70,10 +73,10 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 initial="initial"
                 animate="in"
                 exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
+                variants={slideVariants}
+                transition={slideTransition}
               >
-                <Home loading={loading}/>
+                <Home loading={loading} />
               </motion.div>
             }
           />
@@ -85,14 +88,13 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 initial="initial"
                 animate="in"
                 exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
+                variants={slideVariants}
+                transition={slideTransition}
               >
                 <CV />
               </motion.div>
             }
           />
-
           <Route
             path="/works"
             element={
@@ -101,14 +103,13 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 initial="initial"
                 animate="in"
                 exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
+                variants={slideVariants}
+                transition={slideTransition}
               >
-                <Works loading={loading}/>
+                <Works loading={loading} />
               </motion.div>
             }
           />
-
           <Route
             path="/project/:id"
             element={
@@ -117,14 +118,13 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 initial="initial"
                 animate="in"
                 exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
+                variants={slideVariants}
+                transition={slideTransition}
               >
                 <ProjectDetails />
               </motion.div>
             }
-          />   
-
+          />
           <Route
             path="/contact"
             element={
@@ -133,14 +133,13 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 initial="initial"
                 animate="in"
                 exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
+                variants={slideVariants}
+                transition={slideTransition}
               >
                 <Contact />
               </motion.div>
             }
-          /> 
-
+          />
           <Route
             path="/privacy-policy"
             element={
@@ -149,14 +148,13 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 initial="initial"
                 animate="in"
                 exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
+                variants={slideVariants}
+                transition={slideTransition}
               >
                 <PrivacyPolicy />
               </motion.div>
             }
-          />     
-
+          />
         </Routes>
       </AnimatePresence>
     </div>
@@ -183,6 +181,7 @@ const App = () => {
       {loading && <Loader onLoadComplete={handleLoadComplete} />}
       <div className={`app-content ${loading ? 'hidden' : ''}`}>
         <Router>
+          <ScrollToTop/>
           <Navbar />
           <AnimatedRoutes loading={loading} hasAnimatedBackground={hasAnimatedBackground}/> 
         </Router>

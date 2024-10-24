@@ -6,6 +6,12 @@ import myLibrary from '../assets/images/Etxelit/myLibrary-page.png';
 import formPage from '../assets/images/Etxelit/form.png';
 import bookDetail from '../assets/images/Etxelit/book-detail.png';
 
+//RESTAURANT CAPTURES
+import restaurantHomePage from '../assets/images/DevCamp Restaurant/home-page.png';
+import restaurantMenuPage from '../assets/images/DevCamp Restaurant/menu-page.png';
+import restaurantContactPage from '../assets/images/DevCamp Restaurant/form-page.png';
+import restaurantFooter from '../assets/images/DevCamp Restaurant/footer.png';
+
 const projectData = [
     {
         "id": 1,
@@ -53,6 +59,44 @@ const projectData = [
         "codeLink": ["https://github.com/JonMada/DevCamp-Capstone-FrontEnd", "https://github.com/JonMada/DevCamp-Capstone-BackEnd"],
         "tags": ["React", "Python", "Full Stack", "CRUD", "Responsive Design"],
         "completionDate": "September 2024"
+    },
+    {
+        "id": 2,
+        "title": "DevCamp's Fantastic Fries - Restaurant Website",
+        "description": "DevCamp's Fantastic Fries is a static restaurant website that showcases the menu, ambiance, and contact information for potential customers. Designed to be visually appealing and easy to navigate.",
+        "details": "This website features a modern design built with pure HTML and CSS. It includes a homepage with a welcoming image, a menu page displaying various dishes, and a contact page with a simple form for inquiries. The site is optimized for both desktop and mobile devices, ensuring a seamless user experience across different platforms.",
+        "technologies": {
+            "frontend": ["HTML", "CSS"],
+            "backend": ["None"],
+            "tools": ["GitHub Pages"]
+        },
+        "features": [
+            "Responsive design that adapts to mobile devices.",
+            "Easy navigation through a simple menu.",
+            "Contact form for customer inquiries."
+        ],
+        "screenshots": [
+            {
+                "url": restaurantHomePage,
+                "caption": "Homepage of Delicious Bites"
+            },
+            {
+                "url": restaurantMenuPage,
+                "caption": "Menu showcasing various dishes"
+            },
+            {
+                "url": restaurantContactPage,
+                "caption": "Contact page for customer inquiries"
+            },
+            {
+                'url': restaurantFooter,
+                'caption': 'Web footer with various links'
+            }
+        ],
+        "demoLink": "https://devcamp-coding-foundations-main-project.onrender.com/",
+        "codeLink": ["https://github.com/JonMada/DevCamp-Coding-Foundations-Main-Project/tree/main/html-css"],
+        "tags": ["HTML", "CSS", "Static Site"],
+        "completionDate": "October 2023"
     }
     
 ]

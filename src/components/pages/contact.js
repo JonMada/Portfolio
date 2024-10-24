@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import Footer from '../sections/footer';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ const Contact = () => {
         phoneNumber: '',
         message: '',
     });
+
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,9 +27,11 @@ const Contact = () => {
         emailjs.send('service_7tnfkvh', 'template_8bz7e62', formData, 'iBh9rPc-hpEwBjjJg')
             .then((response) => {
                 console.log('Email successfully sent!', response.status, response.text);
+                setSuccessMessage('Your message has been sent successfully!');
             })
             .catch((err) => {
                 console.error('Failed to send email. Error:', err);
+                setSuccessMessage('There was an error sending your message. Please try again.');
             });
 
          emailjs.send('service_7tnfkvh', 'template_sk6vlk3', formData, 'iBh9rPc-hpEwBjjJg')
@@ -127,6 +132,13 @@ const Contact = () => {
                         <input type="checkbox" name="privacyPolicy" required/>
                         I have read and agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a>*
                     </label>
+
+                    {successMessage && (
+                        <div className="success-message">
+                            <p>{successMessage}</p>
+                        </div>
+                    )}
+
                 </div>
                 <div className='btn-container'>
                     <button type="submit">Send Message</button>
@@ -134,6 +146,7 @@ const Contact = () => {
                 
             </form>
 
+            <Footer/>
         </div>
         
     );

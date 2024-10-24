@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import Footer from '../footer';
+
 const ProjectDetails = () => {
     const location = useLocation();
     const project = location.state?.project; 
@@ -48,51 +50,57 @@ const ProjectDetails = () => {
 
     return (
         <div className="project-details">
-            <h1>{project.title}</h1>
+            
 
-            <section className="project-screenshots">
-                <Carousel {...carouselSettings}>
-                    {project.screenshots.map((screenshot, index) => (
-                        <div key={index} style={{ marginBottom: '20px' }}>
-                            <img 
-                                src={screenshot.url} 
-                                alt={screenshot.caption} 
-                                title={screenshot.caption} 
-                                style={{ width: '100%', borderRadius: '5px', marginTop: '15px', marginBottom: '15px' }} 
-                            />
-                        </div>
-                    ))}
+            <div className='project-container'>
+                <h1>{project.title}</h1>
+                <section className="project-screenshots">
+                    <Carousel {...carouselSettings}>
+                        {project.screenshots.map((screenshot, index) => (
+                            <div key={index} style={{ marginBottom: '20px' }}>
+                                <img 
+                                    src={screenshot.url} 
+                                    alt={screenshot.caption} 
+                                    title={screenshot.caption} 
+                                    style={{ width: '100%', borderRadius: '5px', marginTop: '15px', marginBottom: '15px' }} 
+                                />
+                            </div>
+                        ))}
 
-                   
-                </Carousel>
-                
-                <div className="button-container">
-                    <a 
-                        href={project.demoLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="visit-resource-button"
-                    >
-                        Visit Resource
-                    </a>
+                    
+                    </Carousel>
+                    
+                    <div className="button-container">
+                        <a 
+                            href={project.demoLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="visit-resource-button"
+                        >
+                            Visit Resource
+                        </a>
 
-                    <a 
-                        href={project.codeLink[0]} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="visit-resource-button"
-                    >
-                        Code Repos
-                    </a>
+                        <a 
+                            href={project.codeLink[0]} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="visit-resource-button"
+                        >
+                            Code Repos
+                        </a>
+                    
+                    </div>
+                </section>
 
-                 
-                </div>
-            </section>
+
+                <section className="project-details-section">
+                    <p>{project.details}</p>
+                </section>
+            </div>
 
 
-            <section className="project-details-section">
-                <p>{project.details}</p>
-            </section>
+
+            <Footer projectId = {project.id}/>
            
         </div>
     );

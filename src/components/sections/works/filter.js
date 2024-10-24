@@ -9,7 +9,9 @@ const WorksFilter = ({ onFilterChange }) => {
         { value: "Python", label: "Python" },
         { value: "FastAPI", label: "FastAPI" },
         { value: "PostgreSQL", label: "PostgreSQL" },
-        { value: "SCSS", label: "SCSS" }
+        { value: "SCSS", label: "SCSS" },
+        { value: "CSS", label: "CSS" },
+        { value: "HTML", label: "HTML" }
     ];
 
     const handleTechnologyChange = (selectedOptions) => {

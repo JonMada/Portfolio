@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import myPhoto from '../../assets/images/_DSF2827.jpg';
+import Footer from '../sections/footer';
 
 // Componente para la barra de habilidades
 const SkillBar = ({ skill, level, isVisible }) => {
@@ -156,6 +157,7 @@ const CV = () => {
           <SkillBar skill="UML" level={65} isVisible={skillsVisible} />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
