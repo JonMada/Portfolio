@@ -12,6 +12,10 @@
     position: fixed;
 }
 
+.navbar--closed {
+    height: 100px;
+}
+
 .navbar-icon {
     margin-left: 29px;
     margin-top: -20px;
@@ -56,6 +60,10 @@
 .menu-modal-link {
     margin-top: -50px; 
     margin-right: -660px; 
+}
+
+.navbar-closed {
+    height: 100px;
 }
 
 .navbar-linkedin a,

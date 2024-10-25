@@ -6,10 +6,11 @@ const Footer = ({projectId}) => {
     const isPrivacyPage = location.pathname === '/privacy-policy'; 
     const isWorksPage = location.pathname === '/works';
     const isProjectPage = location.pathname === `/project/${projectId}`;
+    const isTermsPage = location.pathname ==='/terms-of-service';
 
     
     return (
-        <footer className={`footer ${isPrivacyPage || isWorksPage ||isProjectPage? 'privacy-footer' : ''}`}>
+        <footer className={`footer ${isPrivacyPage || isWorksPage ||isProjectPage || isTermsPage? 'privacy-footer' : ''}`}>
             <div className="footer-content">
                 <div className='nav-links'>
                     <a href='/cv'>About me</a>

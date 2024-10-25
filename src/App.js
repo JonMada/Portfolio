@@ -12,13 +12,14 @@ import Works from './components/pages/works';
 import ProjectDetails from './components/sections/works/project-details';
 import Contact from './components/pages/contact';
 import PrivacyPolicy from './components/pages/privacy-policy';
+import TermsOfService from './components/pages/terms';
 
 import ScrollToTop from './components/scroll/scrollTop';
 
 const slideVariants = {
   initial: {
     opacity: 0,
-    x: '100%', 
+    x: '100%',
   },
   in: {
     opacity: 1,
@@ -26,13 +27,13 @@ const slideVariants = {
   },
   out: {
     opacity: 0,
-    x: '-100%', 
+    x: '-100%',
   },
 };
 
 const slideTransition = {
   type: "spring",
-  stiffness: 300,
+  stiffness: 250,
   damping: 30,
 };
 
@@ -42,10 +43,11 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
   const isHomePage = location.pathname === '/'; 
   const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
   const isPolicyPage = location.pathname ==='/privacy-policy';
+  const isTermsPage = location.pathname ==='/terms-of-service';
 
   
   useEffect(() => {
-    if (isWorksPage || isPolicyPage) {
+    if (isWorksPage || isPolicyPage || isTermsPage) {
       document.body.style.backgroundColor = '#f8f8f8'; 
       document.body.style.color = '#000'; 
     } else {
@@ -58,7 +60,7 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
       document.body.style.backgroundColor = '';
       document.body.style.color = '';
     };
-  }, [isWorksPage, isPolicyPage]);
+  }, [isWorksPage, isPolicyPage, isTermsPage]);
 
   return (
     <div>
@@ -155,7 +157,25 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
               </motion.div>
             }
           />
+
+        <Route
+            path="/terms-of-service"
+            element={
+              <motion.div
+                layout
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={slideVariants}
+                transition={slideTransition}
+              >
+                <TermsOfService/>
+              </motion.div>
+            }
+        />
         </Routes>
+
+        
       </AnimatePresence>
     </div>
   );

@@ -122,7 +122,8 @@
         .btn-container {
             display: flex;             
             justify-content: flex-end; 
-            margin: 15px;  
+            margin: 15px;
+             
              
 
             button {
@@ -131,8 +132,9 @@
                 background-color: #1F42E3;  
                 border: 1px solid white;
                 color: white;
+                cursor: pointer; 
                 
-
+            
                 &:hover {
                     outline: 1px solid white;
                 }

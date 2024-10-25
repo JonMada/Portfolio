@@ -6,10 +6,11 @@ const Navbar = () => {
   const location = useLocation();
   const [isModalOpen, setModalOpen] = useState(false);
 
-  // Verifica si estamos en la página Home
+ 
   const isHomePage = location.pathname === '/';
   const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
   const isPolicyPage = location.pathname === '/privacy-policy';
+  const isTermsPage = location.pathname === '/terms-of-service';
 
   // Función para abrir y cerrar el modal
   const toggleModal = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isWorksPage || isPolicyPage ? 'navbar--inverted' : ''}`}>
+    <nav className={`navbar ${isWorksPage || isPolicyPage || isTermsPage? 'navbar--inverted' : ''}`} >
       <div className="navbar-icon">
         <Link to="/">
           <img src={icon} alt="Icon" className="navbar-logo" />
