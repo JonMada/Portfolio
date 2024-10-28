@@ -3,8 +3,18 @@
     height: auto;
     display: flex; 
     align-items: center; 
-    padding: 20px;
-    display: flex;
     flex-direction: column;
-    position: absolute;
+    margin-top: 80px;
+    box-sizing: border-box;
+
+    // Para pantallas más pequeñas
+    @media (max-width: 768px) {
+        padding: 20px; // Ajustar el padding en dispositivos más pequeños
+        margin-top: 80px; // Cambiar el margen superior
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 80px; // Cambiar el margen superior para dispositivos aún más pequeños
+        padding: 20px; // Reducir el padding aún más
+    }
 }

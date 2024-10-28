@@ -1,8 +1,8 @@
 .footer {
-    height: 300px;
+    height: 300px; // Altura para pantallas grandes
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: calc(100vw - 200px);
     align-items: center;
     font-size: 1.2em;
     margin-top: 300px;
@@ -13,13 +13,24 @@
     .footer-content {
         word-spacing: 6px;
         letter-spacing: 6px;
-        width: calc(100vw - 600px);
+        width: 100%; // Ancho para pantallas grandes
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         row-gap: 70px;
+
+        // Ajustes para pantallas más pequeñas
+        @media (max-width: 768px) {
+            width: 90%; // Hacer que el contenido ocupe el 90% del ancho en pantallas medianas
+            row-gap: 30px; // Reducir el espacio entre filas
+        }
+
+        @media (max-width: 480px) {
+            width: 95%; // Ajustar aún más el ancho en pantallas pequeñas
+            row-gap: 20px; // Reducir el espacio entre filas
+        }
     }
 
     .nav-links {
@@ -29,6 +40,18 @@
         justify-items: center;
         width: 100%;
         margin-bottom: 50px;
+
+        // Ajustes para pantallas más pequeñas
+        @media (max-width: 978px) {
+            grid-template-columns: repeat(2, 1fr); // Cambiar a 2 columnas en pantallas medianas
+            margin-bottom: 30px; // Reducir el margen inferior
+            font-size: 1em;
+        }
+
+        @media (max-width: 517px) {
+            grid-template-columns: 1fr; // Cambiar a 1 columna en pantallas pequeñas
+            font-size: 0.8em;
+        }
 
         a {
             text-decoration: none;
@@ -47,6 +70,18 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
+
+        // Ajustes para pantallas más pequeñas
+        @media (max-width: 1166px) {
+            grid-template-columns: 1fr;
+            font-size: 1em; 
+        }
+
+
+        @media (max-width: 517px) {
+            grid-template-columns: 1fr;
+            font-size: 0.8em;
+        }
 
         a {
             color: white;

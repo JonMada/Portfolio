@@ -12,11 +12,20 @@ const AnimatedBackground = ({ loading }) => {
 
   return (
     <svg
-      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
+      style={{
+        position: 'fixed', 
+        top: 0,
+        left: 0,
+        width: '100%', 
+        height: '100%', 
+        pointerEvents: 'none',
+        zIndex: -1 
+      }}
       viewBox="0 0 1600 1000"
     >
       <defs>
         <pattern id="animatedPattern" patternUnits="userSpaceOnUse" width="100%" height="1000">
+          {/* Centro del círculo ajustado */}
           <circle cx="800" cy="500" r="600" stroke="#8bacee" strokeWidth="0.5" fill="none">
             <animate
               attributeName="r"
@@ -28,6 +37,7 @@ const AnimatedBackground = ({ loading }) => {
             />
           </circle>
 
+          {/* Cuadrado centrado */}
           <rect className="square" x="500" y="200" width="600" height="600" stroke="#8bacee" strokeWidth="0.5" fill="none">
             <animateTransform
               attributeName="transform"
@@ -41,6 +51,7 @@ const AnimatedBackground = ({ loading }) => {
             />
           </rect>
 
+          {/* Líneas horizontales y verticales centradas */}
           <line className="line-diagonal-1" x1="0" y1="0" x2="1600" y2="1000" stroke="#8bacee" strokeWidth="0.5" />
           
           <line className="line-horizontal-1" x1="0" y1="400" x2="1600" y2="400" stroke="#8bacee" strokeWidth="0.5" />
@@ -91,20 +102,9 @@ const AnimatedBackground = ({ loading }) => {
         fill="url(#animatedPattern)"
       />
 
-      <rect
-        x="-7"
-        y="490"
-        width="15"
-        height="15"
-        fill="white"
-      />
-      <rect
-        x="1592"
-        y="490"
-        width="15"
-        height="15"
-        fill="white"
-      />
+      {/* Puntos decorativos centrados */}
+      <rect x="-7" y="490" width="15" height="15" fill="white" />
+      <rect x="1592" y="490" width="15" height="15" fill="white" />
     </svg>
   );
 };
