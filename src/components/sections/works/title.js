@@ -1,18 +1,23 @@
+
 import React from 'react';
-import Typical from 'react-typical';
-
-
+import { Typewriter } from 'react-simple-typewriter';
 
 const WorksTitle = () => {
-    return(
-        <div className='works-title'>
-            <Typical
-                steps={[ 1000,'MY RECENT PROJECTS']}
-                wrapper="div"
-            />
     
+    
+    return (
+        <div className='works-title'>
+            <Typewriter
+                words={['MY RECENT PROJECTS']}
+                loop={1} 
+                cursor
+                cursorStyle='|'
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={1000}
+            />
         </div>
-    )
-}
+    );
+};
 
 export default WorksTitle;
