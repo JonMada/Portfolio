@@ -1,76 +1,122 @@
 .project-details {
     display: flex;
     flex-direction: column;
-    margin-top: 100px; 
-    overflow: hidden; 
-    width: 100vw; 
+    margin-top: 100px;
+    overflow: hidden;
+    width: 100vw;
     padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 
     h1 {
         font-size: 1.4em;
         font-weight: 600;
         letter-spacing: 2px;
+
+        @media (max-width: 768px) {
+            font-size: 1.2em;
+        }
+        @media (max-width: 480px) {
+            font-size: 1em;
+        }
     }
-    
 
     .project-container {
         width: calc(100vw - 800px);
 
-        
-        .project-screenshots {
-            position: relative; 
-            margin-top: -5px;
+        @media (max-width: 1200px) {
+            width: calc(100vw - 500px);
         }
-        
-        
+
+        @media (max-width: 768px) {
+            width: calc(100vw - 200px);
+        }
+
+        @media (max-width: 480px) {
+            width: calc(100vw - 50px);
+            padding: 0 10px;
+        }
+
+        .project-screenshots {
+            position: relative;
+            margin-top: -5px;
+
+            @media (max-width: 480px) {
+                margin-top: 10px;
+            }
+        }
+
         .button-container {
-            position: absolute; 
-            bottom: 75px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            z-index: 10; 
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
             width: 350px;
             display: flex;
             gap: 15px;
-        
+
+            @media (max-width: 768px) {
+                width: 250px;
+                bottom: 50px;
+            }
+
+            @media (max-width: 480px) {
+                width: 200px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
             .visit-resource-button {
-                padding: 20px 20px; 
-                background-color: #1F42E3; 
-                color: white; 
-                border: none; 
-                border-radius: 8px; 
-                text-decoration: none; 
+                padding: 15px 15px;
+                background-color: #1F42E3;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
                 transition: background-color 0.3s ease;
-                width: 110px; 
-                text-align: center; 
-                font-size: 1.1em;
+                width: 110px;
+                text-align: center;
+                font-size: 1em;
                 box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            
-                /* Efecto hover */
+
+                @media (max-width: 768px) {
+                    font-size: 0.9em;
+                    padding: 12px 10px;
+                    width: 90px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 0.8em;
+                    padding: 10px;
+                    width: 100%;
+                }
+
                 &:hover {
-                    background-color: #8bacee; 
-                    z-index: 20; 
+                    background-color: #8bacee;
+                    z-index: 20;
                 }
             }
         }
-        
+
         .project-details-section {
             font-size: 1.3em;
             margin: 0;
             margin-top: -20px;
-            line-height: 39px;
+            line-height: 1.6;
             text-align: justify;
+
+            @media (max-width: 768px) {
+                font-size: 1.1em;
+                margin-top: 0;
+                line-height: 1.4;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 1em;
+                line-height: 1.3;
+                padding: 0 15px;
+            }
         }
     }
 }
-
-
-
-
-
-
-
-
