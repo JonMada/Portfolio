@@ -1,21 +1,21 @@
 @keyframes blink {
-  0% { background-color: #1F42E3; color: white }
-  25% { background-color: white; color: black }
-  50% { background-color: #1F42E3; color: white }
-  75% { background-color: white; color: black } 
-  100% { background-color: #1F42E3; color: white }
-}
-
-.cv-section {
+    0% { background-color: #1F42E3; color: white; }
+    25% { background-color: white; color: black; }
+    50% { background-color: #1F42E3; color: white; }
+    75% { background-color: white; color: black; } 
+    100% { background-color: #1F42E3; color: white; }
+  }
+  
+  .cv-section {
     margin-top: 210px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.title {
-    font-size: 10em;
+  }
+  
+  .title {
+    font-size: 10em; 
     font-weight: bold;
     margin-bottom: 20px;
     border: 2px solid white;
@@ -25,116 +25,127 @@
     display: flex;
     justify-content: center;
     animation: blink 1.2s ease forwards;
-}
-
-.content-wrapper {
+  }
+  
+  .cv-wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+  }
+  
+  .content-wrapper {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
     justify-content: center;
     gap: 70px;
     margin-top: 50px;
-    width: calc(100vw - 800px);
+    width: 100%; 
     margin-bottom: 50px;
-}
-
-.pic-info {
+    height: auto;
+  }
+  
+  .pic-info {
     display: flex;
     flex-direction: column;
     border: 2px solid white;
     padding: 15px;
-    height: auto; 
-}
-
-.image img {
-    width: 350px;
+    height:fit-content; /* Ajustar la altura automáticamente */
+    min-width: 250px; /* Establecer un ancho mínimo */
+  }
+  
+  .image img {
+    width: 100%; 
     height: auto;
     border: 2px solid white;
-}
-
-.subtitle {
+    box-sizing: border-box;
+  }
+  
+  .subtitle {
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-.subtitle div {
+  }
+  
+  .subtitle div {
     line-height: 35px;
-}
-
-.myname {
+  }
+  
+  .myname {
     font-size: 1.5em; 
     font-weight: 600; 
-}
-
-.cv-text-wrapper {
+  }
+  
+  .cv-text-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-size: 1.2em;
+    font-size: 1.3em;
     line-height: 35px;
     text-align: justify;
     margin: 0;
-}
-
-.info-wrapper {
+  }
+  
+  .info-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100vw - 800px);
+    width: 100%; 
     margin-top: 50px;
     padding: 20px 0;
     margin: 0 auto;
-}
-
-.section {
+  }
+  
+  .section {
     padding: 15px; 
     margin: 20px 0;
     width: 100%; 
     letter-spacing: 1px;
-}
-
-
-.section p {
+  }
+  
+  .section p {
     border-bottom: 1px solid white; 
     padding-bottom: 10px;
     margin-bottom: 10px; 
     font-size: 1.2em;
-}
-
-.section h2 {
+  }
+  
+  .section h2 {
     border-bottom: 2px solid white; 
     padding-bottom: 5px; 
     margin-bottom: 15px; 
-    font-size: 1.5;
-}
-
-
-.skill-bar {
+    font-size: 1.5em; 
+  }
+  
+  .skill-bar {
     margin: 10px 0;
-}
-
-.skill-name {
+  }
+  
+  .skill-name {
     margin-bottom: 10px;
     font-size: 1.2em;
-}
-
-.bar-container {
+  }
+  
+  .bar-container {
     width: 100%;
     background-color: #e0e0e0; 
     border-radius: 10px;
     overflow: hidden; 
     height: 6px; 
-}
-
-.skill-progress {
+  }
+  
+  .skill-progress {
     height: 100%;
     background-color: #85a7ea; 
     transition: width 0.5s; 
-}
-
-.download-btn {
+  }
+  
+  .download-btn {
     position: relative;
-    width: 150px;
+    width: 200PX;
     color: white;
     border: 1px solid white;
     padding: 20px;
@@ -144,10 +155,109 @@
     overflow: hidden;
     text-decoration: none;
     align-content: center;
-
+  
     &:hover {
       outline: 1px solid white;
     }
   }
   
+  /* Media Queries para Responsividad */
+  @media (max-width: 1650px) {
+    
+    .title {
+      font-size: 7em; /* Tamaño más pequeño para pantallas medianas */
+    }
+
+    .cv-wrapper{
+        max-width: 750px;
+    }
+  
+    .content-wrapper {
+      gap: 40px; /* Reducir el espacio entre elementos */
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .pic-info {
+      min-width: 200px; /* Cambiar el ancho mínimo para flexibilidad */
+    }
+  
+    .myname {
+      font-size: 1.2em; /* Ajustar el tamaño del texto */
+    }
+  
+    .cv-text-wrapper {
+      font-size: 1.3em; /* Ajustar el tamaño del texto */
+    }
+  }
+
+  @media (max-width: 1200px) {
+
+    .title {
+        font-size: 7em; /* Tamaño más pequeño para pantallas medianas */
+      }
+  
+      .cv-wrapper{
+          max-width: 600px;
+      }
+
+  }
+
+  
+  @media (max-width: 1000px) {
+    .title {
+      font-size: 5em; /* Tamaño aún más pequeño para dispositivos móviles */
+    }
+    
+    .cv-wrapper{
+        max-width: 400px;
+    }
+  
+    .content-wrapper {
+      flex-direction: column; /* Cambiar a columna para pantallas más pequeñas */
+      width: 100%; /* Asegurarse de que ocupa todo el ancho */
+      gap: 20px; /* Espacio reducido entre elementos */
+    }
+
+  
+    .pic-info {
+      width: 90%; /* Asegurar que el contenedor se ajuste al ancho */
+    }
+  
+    .myname {
+      font-size: 1.5em; /* Mantener tamaño */
+    }
+  
+    .cv-text-wrapper {
+      font-size: 1.1em; /* Ajustar el tamaño del texto */
+    }
+
+    .section p, .section h2, .skill-name {
+        font-size: 0.9em; /* Tamaño más pequeño */
+      }
+  }
+
+  @media (max-width: 820px) {
+    .title {
+      font-size: 5em; /* Tamaño aún más pequeño para dispositivos móviles */
+    }
+    
+    .cv-wrapper{
+        max-width: 300PX;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 4em; /* Tamaño más pequeño para móviles */
+    }
+  
+    .myname {
+      font-size: 1.2em; /* Tamaño más pequeño */
+    }
+  
+    .section p, .section h2, .skill-name {
+      font-size: 0.9em; /* Tamaño más pequeño */
+    }
+  }
   

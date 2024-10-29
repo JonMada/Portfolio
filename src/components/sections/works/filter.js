@@ -31,7 +31,7 @@ const WorksFilter = ({ onFilterChange }) => {
             '&:hover': {
                 borderColor: '#1F42E3',
             },
-            minWidth: '400px',
+            minWidth: '300px',
             minHeight: '50px'
         }),
         menu: (base) => ({

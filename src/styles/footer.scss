@@ -1,5 +1,5 @@
 .footer {
-    height: 300px; // Altura para pantallas grandes
+    height: 300px; 
     display: flex;
     flex-direction: column;
     width: calc(100vw - 200px);
@@ -13,7 +13,7 @@
     .footer-content {
         word-spacing: 6px;
         letter-spacing: 6px;
-        width: 100%; // Ancho para pantallas grandes
+        width: 100%; 
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -23,13 +23,21 @@
 
         // Ajustes para pantallas más pequeñas
         @media (max-width: 768px) {
-            width: 90%; // Hacer que el contenido ocupe el 90% del ancho en pantallas medianas
-            row-gap: 30px; // Reducir el espacio entre filas
+            width: 90%; 
+            row-gap: 30px; 
+
+            p {
+                font-size: 1em;
+            }
         }
 
         @media (max-width: 480px) {
-            width: 95%; // Ajustar aún más el ancho en pantallas pequeñas
-            row-gap: 20px; // Reducir el espacio entre filas
+            width: 95%; 
+            row-gap: 20px; 
+
+            p {
+                font-size: 0.8em;
+            }
         }
     }
 
@@ -41,15 +49,15 @@
         width: 100%;
         margin-bottom: 50px;
 
-        // Ajustes para pantallas más pequeñas
+        
         @media (max-width: 978px) {
-            grid-template-columns: repeat(2, 1fr); // Cambiar a 2 columnas en pantallas medianas
-            margin-bottom: 30px; // Reducir el margen inferior
+            grid-template-columns: repeat(2, 1fr); 
+            margin-bottom: 30px; 
             font-size: 1em;
         }
 
         @media (max-width: 517px) {
-            grid-template-columns: 1fr; // Cambiar a 1 columna en pantallas pequeñas
+            grid-template-columns: 1fr; 
             font-size: 0.8em;
         }
 
@@ -71,16 +79,18 @@
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
 
-        // Ajustes para pantallas más pequeñas
+        
         @media (max-width: 1166px) {
             grid-template-columns: 1fr;
-            font-size: 1em; 
+            font-size: 0.65; 
+            margin-bottom: 10PX;
         }
 
 
         @media (max-width: 517px) {
             grid-template-columns: 1fr;
-            font-size: 0.8em;
+            font-size: 0.65em;
+            margin-bottom: 10PX;
         }
 
         a {

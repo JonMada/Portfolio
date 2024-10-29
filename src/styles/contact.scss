@@ -18,8 +18,6 @@
         border: 2px solid white;
         border-right: none;
         border-left: none;
-        display: flex;
-        justify-content: center;
         width: 100vw;
         margin: 0;
         text-align: center;
@@ -42,7 +40,7 @@
             grid-template-columns: 1fr 1fr;
             margin: 15px;
             grid-gap: 15px;
-    
+
             div {
                 label {
                     display: flex;
@@ -71,7 +69,6 @@
                         font-weight: 100;
                         font-family: 'Montreal';
                     }
-                    
                 }
             }
         }
@@ -82,49 +79,45 @@
             margin: 15px;
             grid-gap: 15px;
             justify-items: flex-start;
-            
 
-                label {
-                    display: flex;
-                    flex-direction: column;
-                    gap:10px;
-                    width: 100%;
+            label {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            textarea {
+                height: 250px;
+                border: 1px solid white;
+                overflow: auto;
+                resize: none;
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 20px;
+                color: white;
+                outline: none;
+                background-color: #1F42E3;
+                padding: 15px;
+                font-family: 'Montreal';
+
+                &:focus {
+                    outline: 1px solid white;
                 }
 
-                textarea {
-                    height: 250px;
-                    border: 1px solid white;
-                    overflow: auto;
-                    resize: none;
-                    width: 100%;
-                    box-sizing: border-box;
-                    font-size: 20px;
-                    color: white;
-                    outline: none;
-                    background-color: #1F42E3;
-                    padding: 15px;
-                    font-family: 'Montreal';
-
-                    &:focus {
-                        outline: 1px solid white;
-                    }
-
-                    &::placeholder {
-                        color: rgba(255, 255, 255, 0.75);  
-                        opacity: 0.5;    
-                        font-size: 18px;
-                        font-weight: 100;
-                        
-                    }
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.75);  
+                    opacity: 0.5;    
+                    font-size: 18px;
+                    font-weight: 100;
                 }
+            }
         }
 
         .btn-container {
             display: flex;             
             justify-content: flex-end; 
             margin: 15px;
-             
-             
 
             button {
                 padding: 20px;
@@ -133,12 +126,10 @@
                 border: 1px solid white;
                 color: white;
                 cursor: pointer; 
-                
-            
+
                 &:hover {
                     outline: 1px solid white;
                 }
-            
             }
         }
 
@@ -146,22 +137,98 @@
             padding: 15px;
             font-size: 0.7em;
             margin-top: -20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             height: 50px;
             align-items: center;
+            display: flex;
+            
 
-            .success-message{
+            .success-message {
                 text-align: end;
                 margin: 0;
                 min-height: 20px;
             }
 
             a {
-                color: white
-                ;
+                color: white;
             }
         }
     }
+}
 
+/* Media Queries para Responsividad */
+
+/* Dispositivos grandes */
+@media (max-width: 1200px) {
+    .contact-wrapper .contact-title {
+        font-size: 8em;
+    }
+
+    .contact-wrapper form {
+        width: calc(100vw - 400px);
+        font-size: 1.3em;
+    }
+}
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 1020px) {
+    .contact-wrapper .contact-title {
+        font-size: 6em;
+    }
+
+    .contact-wrapper form {
+        width: calc(100vw - 100px);
+        font-size: 1.1em;
+        padding: 0 15px;
+    }
+
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Dispositivos pequeños */
+@media (max-width: 724px) {
+    .contact-wrapper .contact-title {
+        font-size: 4em;
+    }
+
+    .contact-wrapper form {
+        width: calc(100vw - 50px);
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .btn-container {
+        justify-content: center;
+    }
+
+    .privacyPolicy {
+        grid-template-columns: 1fr;
+        text-align: center;
+        font-size: 0.6em;
+    }
+}
+
+/* Dispositivos muy pequeños (menos de 360px) */
+@media (max-width: 664px) {
+    .contact-wrapper .contact-title {
+        font-size: 3em;
+        padding: 5px 0;
+    }
+
+    .contact-wrapper form .two-col{
+        font-size: 0.9em;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .privacyPolicy {
+        font-size: 0.3em;
+    }
 }

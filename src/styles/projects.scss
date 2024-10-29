@@ -1,17 +1,31 @@
-.no-projects-message{
+.no-projects-message {
     font-size: 1.5em;
     font-weight: 500;
     word-spacing: 4px;
     margin-top: 100px;
-    margin-left: 50px;
-}
+    align-self: flex-start;
+    padding-left: 20px;
 
+    /* Media Query para pantallas más pequeñas */
+    @media (max-width: 768px) { 
+        font-size: 1.2em; /* Reducir tamaño de fuente */
+        padding-left: 10px; /* Reducir el padding */
+    }
+
+    @media (max-width: 600px) { 
+        font-size: 1em; /* Reducir tamaño de fuente */
+        padding-left: 5px; /* Alinear un poco más a la izquierda */
+    }
+}
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr; 
     align-items: center;
-    margin-top: 80px;
+    grid-gap: 40px;
+    margin-top: 60px;
+    width: auto;
+
 
     .project-card {
         display: flex;
@@ -19,8 +33,8 @@
         align-items: flex-start;
         cursor: pointer;
         height: auto;
-        margin: 50px;
         position: relative;
+        width: 100%;
 
         p {
             font-size: 1.1em;
@@ -34,7 +48,7 @@
         img {
             width: 100%;
             height: 350px;
-            object-fit:fill;
+            object-fit: cover;
             transition: filter 0.3s ease; 
             border-radius: 5px;
             box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -51,12 +65,11 @@
             z-index: 1; 
             font-size: 1.2em;
             line-height: 35px;
-            text-align:center;
-            width:fit-content;
+            text-align: center;
+            width: fit-content;
             width: 80%; 
             word-wrap: break-word; 
             padding: 20px;
-        
         }
 
         &:hover img {
@@ -67,5 +80,57 @@
             opacity: 1; 
             transform: translate(-50%, -50%);
         }
+    }
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas más grandes: ajustar a 3 columnas */
+@media (min-width: 1700px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pantallas medianas: mantener 2 columnas, ajustar espaciamiento */
+@media (max-width: 1200px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        grid-gap: 40px; /* Reducir el espacio entre las tarjetas */
+    }
+}
+
+/* Pantallas pequeñas (tablets y dispositivos medianos): 1 columna */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Solo 1 columna */
+        grid-gap: 40px; /* Reducir espacio entre las tarjetas */
+
+    }
+
+    .project-card {
+        margin: 0 auto; /* Centrar las tarjetas */
+        width: 80%; /* Ajustar el ancho para que no ocupen todo el espacio */
+    }
+}
+
+/* Pantallas móviles pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Mantener 1 columna */
+        grid-gap: 40px; /* Reducir aún más el espacio */
+    }
+
+    .project-card {
+        width: 90%; /* Ajustar el ancho para dispositivos móviles */
+    }
+
+    .project-card p {
+        font-size: 1em; /* Reducir el tamaño de fuente del texto */
+    }
+
+    .project-description {
+        font-size: 1em; /* Reducir el tamaño de fuente de la descripción */
+        padding: 15px; /* Reducir padding para descripciones */
     }
 }

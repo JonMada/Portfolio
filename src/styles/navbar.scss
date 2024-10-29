@@ -80,10 +80,10 @@
 /*Efecto menu*/
 
 .navbar-item {
-    position: relative; // Asegúrate de que el contenedor sea relativo para posicionar los pseudoelementos
+    position: relative; 
 
     span {
-        position: relative; // Necesario para los pseudoelementos
+        position: relative; 
         border: 1px solid rgba(255, 255, 255, 0);
         padding: 9px;
         transition: border 0.5s ease;
@@ -102,7 +102,6 @@
             right: -2px; 
             transition: transform 0.5s ease; 
         }
-
 
         
         &:hover::before {
