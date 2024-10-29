@@ -11,7 +11,7 @@ const Hero = ({ isHeroVisible }) => {
       const baffleInstances = textRefs.current.map((ref) => {
         const instance = baffle(ref.current);
         instance.set({
-          characters: '█▒░▒▒█░▒▒█▓▒▒▒░░▒▒▓▒█░░█▒▒▒▒▒▒▒▒▒░▒▒▒▒█░▒▒█▓█▒░▒▒█░▒▒▒▒▒▒▒▒░▒▒▒▒█░▒▒█▓█▒░▒▒█░▒',
+          characters: '█▒░░▒░▒█░░░░▒▒▓▒▒▒░░▒▒▓▒█',
           speed: 120,  
         });
         instance.start();
