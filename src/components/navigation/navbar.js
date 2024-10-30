@@ -11,6 +11,7 @@ const Navbar = () => {
   const [iconActive, setIconActive] = useState(icon);
   const [iconShifted, setIconShifted] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1024);
 
   const isHomePage = location.pathname === '/';
   const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
@@ -22,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 0 && (!isHomePage || !isSmallScreen)) {
         setIconActive(icon2);
         setShowMenuButton(true);
         setIconShifted(true);
@@ -34,7 +35,9 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setIsFullScreen(window.innerWidth === window.screen.width);
+      const isFullScreen = window.innerWidth === window.screen.width;
+      setIsFullScreen(isFullScreen);
+      setIsSmallScreen(window.innerWidth < 1024);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,7 +48,7 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isHomePage, isSmallScreen]);
 
   return (
     <nav className={`navbar ${isWorksPage || isPolicyPage || isTermsPage ? 'navbar--inverted' : ''}`}>

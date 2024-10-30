@@ -76,7 +76,7 @@ const CV = () => {
             </p>
 
             <a
-              href="https://drive.google.com/file/d/14KDBEFN4L4EursgBBXxH84Xbo9KnmVpX/view?usp=sharing"
+              href="https://drive.google.com/file/d/17S5QbFC9BDXZ-jCBd17K76_K_3-NnnJV/view?usp=sharing"
               className="download-btn"
               target="_blank"
               rel="noopener noreferrer"

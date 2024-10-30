@@ -5,9 +5,14 @@ import projectData from '../../../data/project.js';
 const Projects = ({ selectedTechnologies }) => {
     const navigate = useNavigate();
     const [hoveredProject, setHoveredProject] = useState(null); 
+    const [toggledProject, setToggledProject] = useState(null);
 
     const handleProjectClick = (project) => {
         navigate(`/project/${project.id}`, { state: { project } }); 
+    };
+
+    const toggleDescription = (projectId) => {
+        setToggledProject(toggledProject === projectId ? null : projectId);
     };
 
     const filterProjects = () => {
@@ -40,13 +45,17 @@ const Projects = ({ selectedTechnologies }) => {
                             onClick={() => handleProjectClick(project)} 
                             onMouseEnter={() => setHoveredProject(project.id)} 
                             onMouseLeave={() => setHoveredProject(null)} 
+                            onTouchStart={(e) => {
+                                e.stopPropagation();
+                                toggleDescription(project.id);
+                            }}
                         >
                             <p>{project.title}</p>
                             <img 
                                 src={project.screenshots[0].url} 
                                 alt={project.screenshots[0].caption} 
                             />
-                            {hoveredProject === project.id && (
+                            {(hoveredProject === project.id || toggledProject === project.id) && (
                                 <div className="project-description">
                                     {project.description} 
                                 </div>

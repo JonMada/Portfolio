@@ -1,8 +1,8 @@
 .hero-container {
-    width: 800px; 
+    width: 50%; 
+    min-height: 50vh;
     display: flex;
     align-items: center;
-    overflow: hidden;
     margin-top: 170px;
     box-sizing: border-box;
 
@@ -22,7 +22,7 @@
         margin: 0;
 
         // Ajuste para pantallas más pequeñas
-        @media (max-width: 768px) {
+        @media (max-width: 820px) {
             font-size: 6.5em; 
         }
 
@@ -35,13 +35,13 @@
         }
 
         @media (max-width: 431px) {
-            font-size: 3.5em; 
+            font-size: 3.1em; 
         }
     }
 }
 
 // Media query para ajustar el contenedor
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     .hero-container {
         width: 100%;
         margin-top: 100px;

@@ -61,7 +61,7 @@
             color: white;
             transform: translate(-50%, -50%);
             opacity: 0;
-            transition: 0.3s ease; 
+            transition: 0.3s ease,transform 0.3s ease;; 
             z-index: 1; 
             font-size: 1.2em;
             line-height: 35px;
@@ -72,6 +72,8 @@
             padding: 20px;
         }
 
+        
+
         &:hover img {
             filter: brightness(0.1); 
         }
@@ -80,7 +82,15 @@
             opacity: 1; 
             transform: translate(-50%, -50%);
         }
+
+        .project-card:hover .project-description,
+        .project-card.active .project-description {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%);
+        }
     }
+
 }
 
 /* Media Queries para Responsividad */
