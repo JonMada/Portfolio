@@ -12,6 +12,11 @@ import restaurantMenuPage from '../assets/images/DevCamp Restaurant/menu-page.pn
 import restaurantContactPage from '../assets/images/DevCamp Restaurant/form-page.png';
 import restaurantFooter from '../assets/images/DevCamp Restaurant/footer.png';
 
+//RESTAURANTE SERVICE CAPTURES
+import code1 from '../assets/images/Restaurante JS/Codigo1.png';
+import code2 from '../assets/images/Restaurante JS/Codigo2.png';
+import code3 from '../assets/images/Restaurante JS/Codigo3.png';
+
 const projectData = [
     {
         "id": 1,
@@ -97,7 +102,44 @@ const projectData = [
         "codeLink": ["https://github.com/JonMada/DevCamp-Coding-Foundations-Main-Project/tree/main/html-css"],
         "tags": ["HTML", "CSS", "Static Site"],
         "completionDate": "October 2023"
+    },
+
+    {
+        "id": 3,
+        "title": "Restaurant Service Assistant - JavaScript Program",
+        "description": "The Restaurant Service Assistant is an interactive JavaScript application that simulates a waiter, offering dish recommendations based on the time of day specified by the user. Additionally, the app provides personalized comments for each dish, creating a more engaging user experience.",
+        "details": "Built with JavaScript, HTML, and CSS, this application runs directly in the browser and allows users to interact via prompts, which render progressively on the screen. Depending on the time of day provided, the app suggests appropriate menu items (e.g., breakfast, lunch, or dinner options) and includes humorous or descriptive commentary on each dish. Designed as a client-side experience, the program does not require a backend, making it lightweight and easy to deploy. The project is hosted on CodePen.io, where users can experience its features interactively.",
+        "technologies": {
+            "frontend": ["JavaScript"],
+            "backend": ["None"],
+            "tools": ["CodePen"]
+        },
+        "features": [
+            "Dish recommendations based on the time of day.",
+            "Personalized comments on each dish for added engagement.",
+            "Interactive prompt-based navigation within the browser.",
+            "Lightweight and easy to deploy on client-side environments."
+        ],
+        "screenshots": [
+            {
+                "url": code1,
+                "caption": "Code screenshot"
+            },
+            {
+                "url": code2,
+                "caption": "Code screenshot"
+            },
+            {
+                "url": code3,
+                "caption": "Code screenshot"
+            }
+        ],
+        "demoLink": "https://codepen.io/Jon-Madariaga/pen/yLWLRmX?editors=0010",
+        "codeLink": ["https://codepen.io/Jon-Madariaga/pen/yLWLRmX?editors=0010"],
+        "tags": ["JavaScript", "Interactive", "Prompt-based", "Client-Side"],
+        "completionDate": "May 2024"
     }
+    
     
 ]
 
