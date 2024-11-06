@@ -11,7 +11,9 @@ const WorksFilter = ({ onFilterChange }) => {
         { value: "PostgreSQL", label: "PostgreSQL" },
         { value: "SCSS", label: "SCSS" },
         { value: "CSS", label: "CSS" },
-        { value: "HTML", label: "HTML" }
+        { value: "HTML", label: "HTML" },
+        { value: "JavaScript", label: "JavaScript" },
+
     ];
 
     const handleTechnologyChange = (selectedOptions) => {
