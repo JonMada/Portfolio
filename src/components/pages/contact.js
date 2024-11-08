@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 import emailjs from 'emailjs-com';
 import Footer from '../sections/footer';
 
-const openInNewTab = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-};
+
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -139,10 +137,6 @@ const Contact = () => {
                     I have read and agree to the 
                     <Link 
                         to="/privacy-policy" 
-                        onClick={(e) => {
-                            e.preventDefault(); 
-                            openInNewTab('/privacy-policy'); 
-                        }}
                     >
                         Privacy Policy
                     </Link>*
