@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const Footer = ({projectId}) => {
     const location = useLocation();
@@ -32,9 +32,9 @@ const Footer = ({projectId}) => {
                 </div>
                 <p>&copy; {new Date().getFullYear()} Jon Madariaga Ortega. All Rights Reserved.</p>
                 <div className="footer-links">
-                    <a href="/privacy-policy">Privacy Policy</a>
-                    <a href="/terms-of-service">Terms of Service</a>
-                    <a href="/contact">Contact Me</a>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
+                    <Link to="/terms-of-service">Terms of Service</Link>
+                    <Link to="/contact">Contact Me</Link>
                 </div>
             </div>
         </footer>

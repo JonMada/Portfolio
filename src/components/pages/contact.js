@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import emailjs from 'emailjs-com';
 import Footer from '../sections/footer';
 
@@ -130,7 +132,7 @@ const Contact = () => {
                 <div className='privacyPolicy'>
                     <label>
                         <input type="checkbox" name="privacyPolicy" required/>
-                        I have read and agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a>*
+                        I have read and agree to the <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>*
                     </label>
 
                     {successMessage && (
