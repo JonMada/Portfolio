@@ -13,8 +13,8 @@ const Footer = ({projectId}) => {
         <footer className={`footer ${isPrivacyPage || isWorksPage ||isProjectPage || isTermsPage? 'privacy-footer' : ''}`}>
             <div className="footer-content">
                 <div className='nav-links'>
-                    <a href='/cv'>About me</a>
-                    <a href='/works'>Works</a>
+                    <Link to='/cv'>About me</Link>
+                    <Link to='/works'>Works</Link>
                     <a 
                         href="https://www.linkedin.com/in/jon-madariaga-ortega" 
                         target="_blank" 
