@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import myPhoto from '../../assets/images/_DSF2827.jpg';
-import Footer from '../sections/footer';
+import React, { useEffect, useRef, useState } from "react";
+import myPhoto from "../../assets/images/_DSF2827.jpg";
+import Footer from "../sections/footer";
 
 // Componente para la barra de habilidades
 const SkillBar = ({ skill, level, isVisible }) => {
@@ -11,8 +11,8 @@ const SkillBar = ({ skill, level, isVisible }) => {
         <div
           className="skill-progress"
           style={{
-            width: isVisible ? `${level}%` : '0%', // Se rellena cuando es visible
-            transition: 'width 1.3s ease-in-out',
+            width: isVisible ? `${level}%` : "0%", // Se rellena cuando es visible
+            transition: "width 1.3s ease-in-out",
           }}
         ></div>
       </div>
@@ -21,20 +21,19 @@ const SkillBar = ({ skill, level, isVisible }) => {
 };
 
 const CV = () => {
-  const [skillsVisible, setSkillsVisible] = useState(false); 
+  const [skillsVisible, setSkillsVisible] = useState(false);
   const skillsRef = useRef(null);
-  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setSkillsVisible(true); 
+            setSkillsVisible(true);
           }
         });
       },
-      { threshold: 0.5 } 
+      { threshold: 0.5 }
     );
 
     if (skillsRef.current) {
@@ -51,7 +50,7 @@ const CV = () => {
   return (
     <div className="cv-section">
       <div className="title">ABOUT ME</div>
-      <div className='cv-wrapper'>
+      <div className="cv-wrapper">
         <div className="content-wrapper">
           <div className="pic-info">
             <div className="image">
@@ -66,17 +65,21 @@ const CV = () => {
 
           <div className="cv-text-wrapper">
             <p>
-              I am a Full Stack Developer with a strong background in research and consulting, supported by three years of
-              experience in qualitative analysis. I recently completed my Full Stack Development training through DevCamp
-              at Bottega University, equipping me with the skills to build comprehensive web projects, from backend logic
-              to frontend user experience. In addition to my technical expertise, I hold a Master's degree in Leisure
-              Project Management, a degree in Political Science and Public Management, and have knowledge of Big Data and
-              Business Intelligence, enabling me to approach projects strategically and from a multidisciplinary
+              I am a Full Stack Developer with a strong background in research
+              and consulting, supported by three years of experience in
+              qualitative analysis. I recently completed my Full Stack
+              Development training through DevCamp at Bottega University,
+              equipping me with the skills to build comprehensive web projects,
+              from backend logic to frontend user experience. In addition to my
+              technical expertise, I hold a Master's degree in Leisure Project
+              Management, a degree in Political Science and Public Management,
+              and have knowledge of Big Data and Business Intelligence, enabling
+              me to approach projects strategically and from a multidisciplinary
               perspective.
             </p>
 
             <a
-              href="https://drive.google.com/file/d/1ajqO0APVZmNPpRlKPP5E00GgT8ooTrq6/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Kz1tVmhpPFXaUXzA5v-hfQjkPRh9OXRQ/view?usp=sharing"
               className="download-btn"
               target="_blank"
               rel="noopener noreferrer"
@@ -103,29 +106,38 @@ const CV = () => {
           <div className="section">
             <h2>EDUCATION</h2>
             <p>
-              <strong>Full Stack Program:</strong> DevCamp by Bottega University (2023 - 2024)
+              <strong>Full Stack Program:</strong> DevCamp by Bottega University
+              (2023 - 2024)
             </p>
             <p>
-              <strong>Big Data and Business Intelligence Program:</strong> Universidad de Deusto (2020 - 2021)
+              <strong>Big Data and Business Intelligence Program:</strong>{" "}
+              Universidad de Deusto (2020 - 2021)
             </p>
             <p>
-              <strong>Master's in Leisure Project Management:</strong> Universidad de Deusto (2019 - 2020)
+              <strong>Master's in Leisure Project Management:</strong>{" "}
+              Universidad de Deusto (2019 - 2020)
             </p>
             <p>
-              <strong>Degree in Political Science and Public Management:</strong> UPV/EHU (2013 - 2019)
+              <strong>
+                Degree in Political Science and Public Management:
+              </strong>{" "}
+              UPV/EHU (2013 - 2019)
             </p>
           </div>
 
           <div className="section">
             <h2>EXPERIENCE</h2>
             <p>
-              <strong>Qualitative Research Technician:</strong> Kualitate Lantaldea, Bilbao (2020-2023)
+              <strong>Qualitative Research Technician:</strong> Kualitate
+              Lantaldea, Bilbao (2020-2023)
             </p>
             <p>
-              <strong>Event Organization Technician (Intern):</strong> Universidad de Deusto, Bilbao (2020)
+              <strong>Event Organization Technician (Intern):</strong>{" "}
+              Universidad de Deusto, Bilbao (2020)
             </p>
             <p>
-              <strong>Qualitative Research Technician (Intern):</strong> Kualitate Lantaldea, Bilbao (2018-2019)
+              <strong>Qualitative Research Technician (Intern):</strong>{" "}
+              Kualitate Lantaldea, Bilbao (2018-2019)
             </p>
           </div>
 
@@ -159,7 +171,7 @@ const CV = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
