@@ -11,7 +11,7 @@ const SkillBar = ({ skill, level, isVisible }) => {
         <div
           className="skill-progress"
           style={{
-            width: isVisible ? `${level}%` : "0%", // Se rellena cuando es visible
+            width: isVisible ? `${level}%` : "0%",
             transition: "width 1.3s ease-in-out",
           }}
         ></div>
@@ -22,7 +22,27 @@ const SkillBar = ({ skill, level, isVisible }) => {
 
 const CV = () => {
   const [skillsVisible, setSkillsVisible] = useState(false);
+  const [edad, setEdad] = useState(null);
+
   const skillsRef = useRef(null);
+
+  const calcularEdad = (fechaNacimiento) => {
+    const hoy = new Date();
+    const nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const mes = hoy.getMonth() - nacimiento.getMonth();
+    const dia = hoy.getDate() - nacimiento.getDate();
+
+    if (mes < 0 || (mes === 0 && dia < 0)) {
+      edad--;
+    }
+
+    return edad;
+  };
+
+  useEffect(() => {
+    setEdad(calcularEdad("1993-08-16"));
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,7 +113,7 @@ const CV = () => {
           <div className="section">
             <h2>PERSONAL INFORMATION</h2>
             <p>
-              <strong>Age:</strong> 31 Years
+              <strong>Age:</strong> {edad} Years
             </p>
             <p>
               <strong>Location:</strong> Sopela, Bizkaia, Spain
