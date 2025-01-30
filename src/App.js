@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
-import Loader from './components/loaders/loader';
-import AnimatedBackground from './components/backgrounds/main-bg';
-import Navbar from './components/navigation/navbar';
+import Loader from "./components/loaders/loader";
+import AnimatedBackground from "./components/backgrounds/main-bg";
+import Navbar from "./components/navigation/navbar";
 
-import Home from './components/pages/home';
-import CV from './components/pages/cv';
-import Works from './components/pages/works';
-import ProjectDetails from './components/sections/works/project-details';
-import Contact from './components/pages/contact';
-import PrivacyPolicy from './components/pages/privacy-policy';
-import TermsOfService from './components/pages/terms';
+import Home from "./components/pages/home";
+import CV from "./components/pages/cv";
+import Works from "./components/pages/works";
+import ProjectDetails from "./components/sections/works/project-details";
+import Contact from "./components/pages/contact";
+import PrivacyPolicy from "./components/pages/privacy-policy";
+import TermsOfService from "./components/pages/terms";
 
-import ScrollToTop from './components/scroll/scrollTop';
+import ScrollToTop from "./components/scroll/scrollTop";
 
 const slideVariants = {
   initial: {
     opacity: 0,
-    x: '100%',
+    x: "100%",
   },
   in: {
     opacity: 1,
@@ -27,7 +32,7 @@ const slideVariants = {
   },
   out: {
     opacity: 0,
-    x: '-100%',
+    x: "-100%",
   },
 };
 
@@ -37,30 +42,46 @@ const slideTransition = {
   damping: 30,
 };
 
+const AnimatedRoutes = ({ loading, hasAnimatedBackground }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const isWorksPage =
+    location.pathname === "/works" || location.pathname.startsWith("/project/");
+  const isPolicyPage = location.pathname === "/privacy-policy";
+  const isTermsPage = location.pathname === "/terms-of-service";
 
-const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
-  const location = useLocation(); 
-  const isHomePage = location.pathname === '/'; 
-  const isWorksPage = location.pathname === '/works' || location.pathname.startsWith('/project/');
-  const isPolicyPage = location.pathname ==='/privacy-policy';
-  const isTermsPage = location.pathname ==='/terms-of-service';
-
-  
   useEffect(() => {
     if (isWorksPage || isPolicyPage || isTermsPage) {
-      document.body.style.backgroundColor = '#f8f8f8'; 
-      document.body.style.color = '#000'; 
+      document.body.style.backgroundColor = "#f8f8f8";
+      document.body.style.color = "#000";
     } else {
-      document.body.style.backgroundColor = '#1F42E3'; 
-      document.body.style.color = '#fff'; 
+      document.body.style.backgroundColor = "#1F42E3";
+      document.body.style.color = "#fff";
     }
 
-    
     return () => {
-      document.body.style.backgroundColor = '';
-      document.body.style.color = '';
+      document.body.style.backgroundColor = "";
+      document.body.style.color = "";
     };
   }, [isWorksPage, isPolicyPage, isTermsPage]);
+
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      if (window.innerHeight < window.innerWidth) {
+        window.screen.orientation.lock("portrait"); // Bloquea la orientación vertical
+      }
+    };
+
+    // Detecta cuando el tamaño de la ventana cambia (al girar el dispositivo)
+    window.addEventListener("resize", handleOrientationChange);
+
+    // Verificar si el dispositivo ya está en horizontal al cargar
+    handleOrientationChange();
+
+    return () => {
+      window.removeEventListener("resize", handleOrientationChange);
+    };
+  }, []);
 
   return (
     <div>
@@ -158,7 +179,7 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
             }
           />
 
-        <Route
+          <Route
             path="/terms-of-service"
             element={
               <motion.div
@@ -169,13 +190,11 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground  }) => {
                 variants={slideVariants}
                 transition={slideTransition}
               >
-                <TermsOfService/>
+                <TermsOfService />
               </motion.div>
             }
-        />
+          />
         </Routes>
-
-        
       </AnimatePresence>
     </div>
   );
@@ -185,7 +204,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [hasAnimatedBackground, setHasAnimatedBackground] = useState(false);
-
 
   const handleLoadComplete = () => {
     setIsTransitioning(true);
@@ -197,13 +215,20 @@ const App = () => {
   };
 
   return (
-    <div className={`app ${loading ? 'app--loading' : ''} ${isTransitioning ? 'app--transitioning' : ''}`}>
+    <div
+      className={`app ${loading ? "app--loading" : ""} ${
+        isTransitioning ? "app--transitioning" : ""
+      }`}
+    >
       {loading && <Loader onLoadComplete={handleLoadComplete} />}
-      <div className={`app-content ${loading ? 'hidden' : ''}`}>
+      <div className={`app-content ${loading ? "hidden" : ""}`}>
         <Router>
-          <ScrollToTop/>
+          <ScrollToTop />
           <Navbar />
-          <AnimatedRoutes loading={loading} hasAnimatedBackground={hasAnimatedBackground}/> 
+          <AnimatedRoutes
+            loading={loading}
+            hasAnimatedBackground={hasAnimatedBackground}
+          />
         </Router>
       </div>
     </div>
