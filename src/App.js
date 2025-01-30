@@ -65,24 +65,6 @@ const AnimatedRoutes = ({ loading, hasAnimatedBackground }) => {
     };
   }, [isWorksPage, isPolicyPage, isTermsPage]);
 
-  useEffect(() => {
-    const handleOrientationChange = () => {
-      if (window.innerHeight < window.innerWidth) {
-        window.screen.orientation.lock("portrait"); // Bloquea la orientación vertical
-      }
-    };
-
-    // Detecta cuando el tamaño de la ventana cambia (al girar el dispositivo)
-    window.addEventListener("resize", handleOrientationChange);
-
-    // Verificar si el dispositivo ya está en horizontal al cargar
-    handleOrientationChange();
-
-    return () => {
-      window.removeEventListener("resize", handleOrientationChange);
-    };
-  }, []);
-
   return (
     <div>
       {isHomePage && <AnimatedBackground loading={hasAnimatedBackground} />}

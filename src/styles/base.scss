@@ -29,13 +29,6 @@ body {
   scrollbar-width: none;
 }
 
-@media only screen and (max-width: 768px) and (orientation: landscape) {
-  body {
-    transform: rotate(0deg); /* Ajusta la vista a vertical */
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
-  }
-}
-
 .app-content {
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
