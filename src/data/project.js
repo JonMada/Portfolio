@@ -86,7 +86,7 @@ const projectData = [
       "Neo-Pong is a CyberPunk-inspired revival of the classic Pong, featuring a modern aesthetic and engaging gameplay. The game offers multiple modes, including local 1v1 and AI battles with adjustable difficulty, with an online multiplayer mode coming soon. Built with React and Vite for a seamless experience, it utilizes Canvas 2D for graphics, SCSS for styling, and Howler for immersive sound effects.",
     technologies: {
       frontend: ["React", "Vite", "SCSS", "React Router DOM", "Canvas 2D"],
-      backend: null,
+      backend: ["None"],
       tools: [
         "Font Awesome",
         "React Icons",
