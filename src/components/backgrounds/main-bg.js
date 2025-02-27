@@ -22,6 +22,7 @@ const AnimatedBackground = ({ loading }) => {
         zIndex: -1,
       }}
       viewBox="0 0 1600 1000"
+      preserveAspectRatio="xMidYMid meet" // Mantiene la relación de aspecto
     >
       <defs>
         <pattern
