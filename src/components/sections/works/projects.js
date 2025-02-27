@@ -34,7 +34,7 @@ const Projects = ({ selectedTechnologies }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(true);
+      setLoading(false);
     }, 2000);
   }, []);
 
