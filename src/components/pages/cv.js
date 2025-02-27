@@ -136,6 +136,57 @@ const CV = () => {
             </p>
           </div>
 
+          <div className="section">
+            <h2>EDUCATION</h2>
+            <p>
+              <strong>Full Stack Program:</strong> DevCamp by Bottega University
+              (2023 - 2024)
+            </p>
+            <p>
+              <strong>Big Data and Business Intelligence Program:</strong>{" "}
+              Universidad de Deusto (2020 - 2021)
+            </p>
+            <p>
+              <strong>Master's in Leisure Project Management:</strong>{" "}
+              Universidad de Deusto (2019 - 2020)
+            </p>
+            <p>
+              <strong>
+                Degree in Political Science and Public Management:
+              </strong>{" "}
+              UPV/EHU (2013 - 2019)
+            </p>
+          </div>
+
+          <div className="section">
+            <h2>EXPERIENCE</h2>
+            <p>
+              <strong>Qualitative Research Technician:</strong> Kualitate
+              Lantaldea, Bilbao (2020-2023)
+            </p>
+            <p>
+              <strong>Event Organization Technician (Intern):</strong>{" "}
+              Universidad de Deusto, Bilbao (2020)
+            </p>
+            <p>
+              <strong>Qualitative Research Technician (Intern):</strong>{" "}
+              Kualitate Lantaldea, Bilbao (2018-2019)
+            </p>
+          </div>
+
+          <div className="section">
+            <h2>CONTACT</h2>
+            <p>
+              <strong>Phone:</strong> +34 688 650 193
+            </p>
+            <p>
+              <strong>Email:</strong> jonmadariaga93@gmail.com
+            </p>
+            <p>
+              <strong>Address:</strong> Plazarte, 45, Sopela, Bizkaia
+            </p>
+          </div>
+
           <div className="section" ref={skillsRef}>
             <h2>SKILLS</h2>
             <SkillBar skill="HTML5" level={95} isVisible={skillsVisible} />
