@@ -24,6 +24,7 @@ const CV = () => {
   const [skillsVisible, setSkillsVisible] = useState(false);
   const [edad, setEdad] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageSrc, setImageSrc] = useState(null);
 
   const skillsRef = useRef(null);
 
@@ -71,7 +72,10 @@ const CV = () => {
   useEffect(() => {
     const img = new Image();
     img.src = myPhotoSrc;
-    img.onload = () => setImageLoaded(true);
+    img.onload = () => {
+      setImageSrc(myPhotoSrc);
+      setImageLoaded(true);
+    };
   }, []);
 
   return (
@@ -82,7 +86,7 @@ const CV = () => {
           <div className="pic-info">
             <div className="image">
               {imageLoaded && (
-                <img src={myPhotoSrc} alt="myPhoto" loading="lazy" />
+                <img src={imageSrc} alt="myPhoto" loading="eager" />
               )}
             </div>
 
