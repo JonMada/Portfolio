@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import myPhoto from "../../assets/images/_DSF2827.jpg";
+import myPhotoSrc from "../../assets/images/_DSF2827.jpg"; // Ruta de la imagen
 import Footer from "../sections/footer";
 
 // Componente para la barra de habilidades
@@ -23,6 +23,7 @@ const SkillBar = ({ skill, level, isVisible }) => {
 const CV = () => {
   const [skillsVisible, setSkillsVisible] = useState(false);
   const [edad, setEdad] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const skillsRef = useRef(null);
 
@@ -67,6 +68,12 @@ const CV = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = myPhotoSrc;
+    img.onload = () => setImageLoaded(true);
+  }, []);
+
   return (
     <div className="cv-section">
       <div className="title">ABOUT ME</div>
@@ -74,7 +81,9 @@ const CV = () => {
         <div className="content-wrapper">
           <div className="pic-info">
             <div className="image">
-              <img src={myPhoto} alt="myPhoto" />
+              {imageLoaded && (
+                <img src={myPhotoSrc} alt="myPhoto" loading="lazy" />
+              )}
             </div>
 
             <div className="subtitle">
@@ -120,57 +129,6 @@ const CV = () => {
             </p>
             <p>
               <strong>Languages:</strong> Native Spanish / English / Basque
-            </p>
-          </div>
-
-          <div className="section">
-            <h2>EDUCATION</h2>
-            <p>
-              <strong>Full Stack Program:</strong> DevCamp by Bottega University
-              (2023 - 2024)
-            </p>
-            <p>
-              <strong>Big Data and Business Intelligence Program:</strong>{" "}
-              Universidad de Deusto (2020 - 2021)
-            </p>
-            <p>
-              <strong>Master's in Leisure Project Management:</strong>{" "}
-              Universidad de Deusto (2019 - 2020)
-            </p>
-            <p>
-              <strong>
-                Degree in Political Science and Public Management:
-              </strong>{" "}
-              UPV/EHU (2013 - 2019)
-            </p>
-          </div>
-
-          <div className="section">
-            <h2>EXPERIENCE</h2>
-            <p>
-              <strong>Qualitative Research Technician:</strong> Kualitate
-              Lantaldea, Bilbao (2020-2023)
-            </p>
-            <p>
-              <strong>Event Organization Technician (Intern):</strong>{" "}
-              Universidad de Deusto, Bilbao (2020)
-            </p>
-            <p>
-              <strong>Qualitative Research Technician (Intern):</strong>{" "}
-              Kualitate Lantaldea, Bilbao (2018-2019)
-            </p>
-          </div>
-
-          <div className="section">
-            <h2>CONTACT</h2>
-            <p>
-              <strong>Phone:</strong> +34 688 650 193
-            </p>
-            <p>
-              <strong>Email:</strong> jonmadariaga93@gmail.com
-            </p>
-            <p>
-              <strong>Address:</strong> Plazarte, 45, Sopela, Bizkaia
             </p>
           </div>
 
