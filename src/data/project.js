@@ -1,27 +1,27 @@
 //ETXELIT CAPTURES
-import homePageImg from "../assets/images/Etxelit/home-page.png";
-import booksPage from "../assets/images/Etxelit/books-page.png";
-import registerPage from "../assets/images/Etxelit/register-page.png";
-import myLibrary from "../assets/images/Etxelit/myLibrary-page.png";
-import formPage from "../assets/images/Etxelit/form.png";
-import bookDetail from "../assets/images/Etxelit/book-detail.png";
+import homePageImg from "../assets/images/Etxelit/home-page.webp";
+import booksPage from "../assets/images/Etxelit/books-page.webp";
+import registerPage from "../assets/images/Etxelit/register-page.webp";
+import myLibrary from "../assets/images/Etxelit/myLibrary-page.webp";
+import formPage from "../assets/images/Etxelit/form.webp";
+import bookDetail from "../assets/images/Etxelit/book-detail.webp";
 
 //RESTAURANT CAPTURES
-import restaurantHomePage from "../assets/images/DevCamp Restaurant/home-page.png";
-import restaurantMenuPage from "../assets/images/DevCamp Restaurant/menu-page.png";
-import restaurantContactPage from "../assets/images/DevCamp Restaurant/form-page.png";
-import restaurantFooter from "../assets/images/DevCamp Restaurant/footer.png";
+import restaurantHomePage from "../assets/images/DevCamp Restaurant/home-page.webp";
+import restaurantMenuPage from "../assets/images/DevCamp Restaurant/menu-page.webp";
+import restaurantContactPage from "../assets/images/DevCamp Restaurant/form-page.webp";
+import restaurantFooter from "../assets/images/DevCamp Restaurant/footer.webp";
 
 //RESTAURANTE SERVICE CAPTURES
-import code1 from "../assets/images/Restaurante JS/Codigo1.png";
-import code2 from "../assets/images/Restaurante JS/Codigo2.png";
-import code3 from "../assets/images/Restaurante JS/Codigo3.png";
+import code1 from "../assets/images/Restaurante JS/Codigo1.webp";
+import code2 from "../assets/images/Restaurante JS/Codigo2.webp";
+import code3 from "../assets/images/Restaurante JS/Codigo3.webp";
 
 //NEO-PONG CAPTURES
-import neopong1 from "../assets/images/Neo-Pong/neo_pong_sh1.png";
-import neopong2 from "../assets/images/Neo-Pong/neo_pong_sh2.png";
-import neopong3 from "../assets/images/Neo-Pong/neo_pong_sh3.png";
-import neopong4 from "../assets/images/Neo-Pong/neo_pong_sh4.png";
+import neopong1 from "../assets/images/Neo-Pong/neo_pong_sh1.webp";
+import neopong2 from "../assets/images/Neo-Pong/neo_pong_sh2.webp";
+import neopong3 from "../assets/images/Neo-Pong/neo_pong_sh3.webp";
+import neopong4 from "../assets/images/Neo-Pong/neo_pong_sh4.webp";
 
 const projectData = [
   {
