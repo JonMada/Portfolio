@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import myPhotoSrc from "../../assets/images/_DSF2827.jpg";
+import myPhotoSrc from "../../assets/images/_DSF2827.webp";
 import Footer from "../sections/footer";
 
 // Componente para la barra de habilidades
