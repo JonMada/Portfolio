@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1000;
+  padding: 5px;
+  position: fixed;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    position: absolute;
+  }
+}
+.navbar--closed {
+  height: 100px;
+}
+
+.navbar-icon {
+  margin-left: 20px;
+  margin-top: -20px;
+  overflow: hidden;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.icon-shifted {
+  transform: translateX(-39.8px);
+}
+
+.navbar-logo {
+  height: auto;
+  width: 150px;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .navbar-logo {
+    display: none;
+    margin: 0;
+  }
+}
+.nav-bar-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 110px;
+  height: 100%;
+  width: 800px;
+  margin-top: 20px;
+  align-content: center;
+  justify-items: center;
+}
+
+.social-media-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  align-items: flex-end;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  align-items: flex-end;
+}
+
+.menu-modal-link {
+  margin-top: -50px;
+  margin-right: -51vw; /* Ajusta este valor según sea necesario */
+}
+@media (max-width: 1500px) {
+  .menu-modal-link {
+    margin-right: -70vw;
+  }
+}
+@media (max-width: 1280px) {
+  .menu-modal-link {
+    margin-right: -80vw;
+  }
+}
+@media (max-width: 1080px) {
+  .menu-modal-link {
+    margin-right: -90vw;
+  }
+}
+@media (max-width: 1024px) {
+  .menu-modal-link {
+    margin-right: -100vw;
+  }
+}
+@media (max-width: 853px) {
+  .menu-modal-link {
+    margin-right: -122vw;
+  }
+}
+@media (max-width: 820px) {
+  .menu-modal-link {
+    margin-right: -130vw;
+  }
+}
+
+.navbar-linkedin a,
+.navbar-github a,
+.navbar-item a,
+.navbar-item span {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/*Efecto menu*/
+.navbar-item {
+  position: relative;
+}
+.navbar-item span {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 9px;
+  transition: border 0.5s ease;
+}
+.navbar-item span::before {
+  content: "[";
+  position: absolute;
+  left: -2px;
+  transition: transform 0.5s ease;
+}
+.navbar-item span::after {
+  content: "]";
+  position: absolute;
+  right: -2px;
+  transition: transform 0.5s ease;
+}
+.navbar-item span:hover::before {
+  transform: translateX(-8px);
+}
+.navbar-item span:hover::after {
+  transform: translateX(8px);
+}
+
+/* Cambiar el color a negro en hover */
+.navbar-linkedin a:hover,
+.navbar-github a:hover,
+.navbar-item a:hover {
+  color: black;
+}
+
+/* Efecto de fondo */
+.navbar-linkedin a::after,
+.navbar-github a::after,
+.navbar-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: -1;
+  transform: translateX(-20%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.navbar-linkedin a:hover::after,
+.navbar-github a:hover::after,
+.navbar-item a:hover::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.navbar--inverted .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 25px;
+  right: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  width: 750px;
+}
+@media (max-width: 900px) {
+  .modal-content {
+    width: 500px;
+  }
+}
+@media (max-width: 650px) {
+  .modal-content {
+    width: 350px;
+    margin-right: -15vw;
+    padding: 0px;
+  }
+}
+@media (max-width: 534px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+    width: 150px;
+    grid-gap: 20px;
+  }
+}
+
+.modal-content .social-media-links,
+.modal-content .navbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  align-items: flex-end;
+}
+
+.modal-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.modal-content a:hover {
+  color: black;
+}
+
+.navbar--inverted .navbar-icon img {
+  filter: invert(1);
+}
+
+.navbar--inverted .navbar-item a,
+.navbar--inverted .social-media-links a,
+.navbar--inverted .social-media-links a {
+  color: white;
+}
+
+.navbar--inverted .navbar-item span {
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 9px;
+  transition: 0.5s ease;
+}
+
+/* Invertir colores en hover */
+.navbar--inverted .navbar-item a:hover,
+.navbar--inverted .social-media-links a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* Efecto de fondo al pasar el mouse */
+.navbar-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: -1;
+  transform: translateX(-20%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+/* Efecto para la página de Works */
+.navbar--inverted .navbar-item a::after,
+.navbar--inverted .social-media-links a::after {
+  background-color: rgb(0, 0, 0); /* Fondo negro */
+}
+
+.navbar-item a:hover::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Transiciones para cambios suaves */
+.navbar,
+.navbar-item a,
+.navbar--inverted .navbar-item a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}/*# sourceMappingURL=navbar.css.map */

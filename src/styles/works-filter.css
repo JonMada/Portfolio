@@ -1,0 +1,36 @@
+.works-filter {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  height: 50px;
+  /* Media Queries */
+}
+.works-filter .select-filter {
+  width: auto;
+}
+@media (max-width: 1200px) {
+  .works-filter .works-filter {
+    font-size: 1.1em;
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .works-filter .works-filter {
+    align-items: flex-end;
+    font-size: 1em;
+  }
+}
+@media (max-width: 480px) {
+  .works-filter .works-filter {
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .works-filter .works-filter .css-127p63t-control {
+    min-width: 100px;
+  }
+}/*# sourceMappingURL=works-filter.css.map */

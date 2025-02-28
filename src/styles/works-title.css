@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.works-title {
+  font-size: 3.5em; /* Tamaño grande por defecto */
+  font-weight: 500;
+  width: 350px;
+  line-height: 60px;
+  margin-bottom: 25px;
+  height: 200px;
+  text-align: left; /* Alinear texto a la izquierda */
+  box-sizing: border-box;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+  .works-title {
+    font-size: 3em; /* Tamaño más pequeño para pantallas medianas */
+    width: 300px; /* Ajustar el ancho */
+  }
+}
+@media (max-width: 793px) {
+  .works-title {
+    font-size: 2.5em; /* Tamaño más pequeño para pantallas más pequeñas */
+    width: 250px; /* Ajustar el ancho */
+    line-height: 50px; /* Ajustar la altura de línea */
+    height: auto; /* Permitir que el alto se ajuste automáticamente */
+  }
+}
+@media (max-width: 480px) {
+  .works-title {
+    font-size: 2.2em;
+    max-width: 90%;
+    line-height: 1.2em; /* Ajuste más proporcional de la altura de línea */
+    overflow-wrap: break-word; /* Asegurar que las palabras largas se ajusten correctamente */
+  }
+}/*# sourceMappingURL=works-title.css.map */

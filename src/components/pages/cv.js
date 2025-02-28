@@ -23,7 +23,7 @@ const SkillBar = ({ skill, level, isVisible }) => {
 const CV = () => {
   const [skillsVisible, setSkillsVisible] = useState(false);
   const [edad, setEdad] = useState(null);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [imageSrc, setImageSrc] = useState(null);
 
   const skillsRef = useRef(null);
@@ -74,9 +74,13 @@ const CV = () => {
     img.src = myPhotoSrc;
     img.onload = () => {
       setImageSrc(myPhotoSrc);
-      setImageLoaded(true);
+      setIsImageLoaded(true);
     };
   }, []);
+
+  if (!isImageLoaded) {
+    return null;
+  }
 
   return (
     <div className="cv-section">
@@ -85,9 +89,7 @@ const CV = () => {
         <div className="content-wrapper">
           <div className="pic-info">
             <div className="image">
-              {imageLoaded && (
-                <img src={imageSrc} alt="myPhoto" loading="eager" />
-              )}
+              <img src={imageSrc} alt="myPhoto" loading="eager" />
             </div>
 
             <div className="subtitle">

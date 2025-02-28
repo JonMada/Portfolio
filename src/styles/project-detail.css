@@ -1,0 +1,111 @@
+.project-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  overflow: hidden;
+  width: 100vw;
+  padding-bottom: 50px;
+  align-items: center;
+}
+.project-details h1 {
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+  .project-details h1 {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 480px) {
+  .project-details h1 {
+    font-size: 1em;
+  }
+}
+.project-details .project-container {
+  width: calc(100vw - 800px);
+}
+@media (max-width: 1200px) {
+  .project-details .project-container {
+    width: calc(100vw - 500px);
+  }
+}
+@media (max-width: 768px) {
+  .project-details .project-container {
+    width: calc(100vw - 200px);
+  }
+}
+@media (max-width: 480px) {
+  .project-details .project-container {
+    width: calc(100vw - 50px);
+    padding: 0 10px;
+  }
+}
+.project-details .project-container .project-screenshots {
+  margin-top: -5px;
+}
+@media (max-width: 480px) {
+  .project-details .project-container .project-screenshots {
+    margin-top: 10px;
+  }
+}
+.project-details .project-container .button-container {
+  bottom: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+.project-details .project-container .button-container .visit-resource-button {
+  padding: 15px 15px;
+  background-color: #1F42E3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 110px;
+  text-align: center;
+  font-size: 1em;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+@media (max-width: 768px) {
+  .project-details .project-container .button-container .visit-resource-button {
+    font-size: 0.9em;
+    padding: 12px 10px;
+    width: 90px;
+  }
+}
+@media (max-width: 480px) {
+  .project-details .project-container .button-container .visit-resource-button {
+    font-size: 0.8em;
+    padding: 10px;
+    width: 100%;
+  }
+}
+.project-details .project-container .button-container .visit-resource-button:hover {
+  background-color: #8bacee;
+  z-index: 20;
+}
+.project-details .project-container .project-details-section {
+  font-size: 1.3em;
+  margin: 0;
+  margin-top: -20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+@media (max-width: 768px) {
+  .project-details .project-container .project-details-section {
+    font-size: 1.1em;
+    margin-top: 0;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 480px) {
+  .project-details .project-container .project-details-section {
+    font-size: 1em;
+    line-height: 1.3;
+    padding: 0 15px;
+  }
+}/*# sourceMappingURL=project-detail.css.map */

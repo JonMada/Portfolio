@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.works-page {
+  width: calc(100vw - 200px); /* Ancho flexible para pantallas grandes */
+  margin: 190px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.works-container {
+  width: 1324px; /* Ancho predeterminado para pantallas grandes */
+  max-width: 100%; /* Asegura que el contenedor no desborde el ancho de la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  overflow: hidden;
+  padding: 20px;
+  min-height: 400px;
+  margin: 20px;
+}
+
+/* Media Queries para Responsividad */
+/* Para pantallas grandes hasta medianas (1200px - 1500px) */
+@media (max-width: 1500px) {
+  .works-page {
+    width: calc(100vw - 100px); /* Reducir el ancho */
+  }
+  .works-container {
+    width: 1100px; /* Ajustar el ancho del contenedor */
+  }
+}
+/* Para pantallas medianas (768px - 1200px) */
+@media (max-width: 1200px) {
+  .works-page {
+    width: calc(100vw - 50px); /* Aún más estrecho en pantallas medianas */
+  }
+  .works-container {
+    width: 90%; /* Usar porcentaje para mayor flexibilidad */
+    padding: 15px; /* Reducir el padding */
+  }
+}
+/* Para pantallas pequeñas y móviles (480px - 768px) */
+@media (max-width: 768px) {
+  .works-page {
+    width: 100vw; /* Usar todo el ancho disponible */
+    padding: 0 10px; /* Añadir un poco de padding lateral */
+  }
+  .works-container {
+    width: 95%; /* Ajustar el contenedor para no pegarse a los bordes */
+    padding: 10px; /* Reducir el padding */
+  }
+}
+/* Para pantallas móviles muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .works-page {
+    width: 100vw;
+    padding: 0 5px; /* Añadir un pequeño margen para evitar que el contenido se pegue a los bordes */
+  }
+  .works-container {
+    width: 100%; /* Hacer que el contenedor ocupe todo el ancho */
+    padding: 5px; /* Reducir aún más el padding */
+    min-height: 300px; /* Ajustar la altura mínima si es necesario */
+  }
+}/*# sourceMappingURL=works.css.map */

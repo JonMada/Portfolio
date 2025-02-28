@@ -1,0 +1,26 @@
+.background-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.static {
+  opacity: 0.1;
+}
+
+.animated {
+  opacity: 0.1;
+}
+
+@media (max-width: 1200px) {
+  svg {
+    display: none;
+  }
+}/*# sourceMappingURL=main-bg.css.map */

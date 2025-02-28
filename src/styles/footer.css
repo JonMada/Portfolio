@@ -1,0 +1,114 @@
+.footer {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 200px);
+  align-items: center;
+  font-size: 1.2em;
+  margin-top: 300px;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+.footer .footer-content {
+  word-spacing: 6px;
+  letter-spacing: 6px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 70px;
+}
+@media (max-width: 768px) {
+  .footer .footer-content {
+    width: 90%;
+    row-gap: 30px;
+  }
+  .footer .footer-content p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-content {
+    width: 95%;
+    row-gap: 20px;
+  }
+  .footer .footer-content p {
+    font-size: 0.8em;
+  }
+}
+.footer .nav-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (max-width: 978px) {
+  .footer .nav-links {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 30px;
+    font-size: 1em;
+  }
+}
+@media (max-width: 517px) {
+  .footer .nav-links {
+    grid-template-columns: 1fr;
+    font-size: 0.8em;
+  }
+}
+.footer .nav-links a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid transparent;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+.footer .nav-links a:hover {
+  border-bottom: 1px solid white;
+}
+.footer .footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+@media (max-width: 1166px) {
+  .footer .footer-links {
+    grid-template-columns: 1fr;
+    font-size: 0.65;
+    margin-bottom: 10PX;
+  }
+}
+@media (max-width: 517px) {
+  .footer .footer-links {
+    grid-template-columns: 1fr;
+    font-size: 0.65em;
+    margin-bottom: 10PX;
+  }
+}
+.footer .footer-links a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+}
+.footer .footer-links a:hover {
+  background-color: #8bacee;
+}
+.footer.privacy-footer .nav-links a {
+  color: black;
+  border: 1px solid transparent;
+}
+.footer.privacy-footer .nav-links a:hover {
+  border-bottom: 1px solid black;
+}
+.footer.privacy-footer .footer-links a {
+  color: black;
+  border: 1px solid black;
+}
+.footer.privacy-footer .footer-links a:hover {
+  color: white;
+  background-color: black;
+}/*# sourceMappingURL=footer.css.map */
