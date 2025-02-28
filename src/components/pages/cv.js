@@ -47,6 +47,8 @@ const CV = () => {
   }, []);
 
   useEffect(() => {
+    if (!isImageLoaded) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -67,7 +69,7 @@ const CV = () => {
         observer.unobserve(skillsRef.current);
       }
     };
-  }, []);
+  }, [isImageLoaded]);
 
   useEffect(() => {
     const img = new Image();
@@ -79,7 +81,7 @@ const CV = () => {
   }, []);
 
   if (!isImageLoaded) {
-    return null;
+    return <div style={{ minHeight: "100vh" }}></div>;
   }
 
   return (
