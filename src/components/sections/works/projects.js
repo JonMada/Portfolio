@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import projectData from "../../../data/project.js";
 
-const Projects = ({ selectedTechnologies }) => {
+const Projects = ({ selectedTechnologies = [] }) => {
   const navigate = useNavigate();
   const [hoveredProject, setHoveredProject] = useState(null);
   const [toggledProject, setToggledProject] = useState(null);
@@ -16,11 +16,9 @@ const Projects = ({ selectedTechnologies }) => {
     setToggledProject(toggledProject === projectId ? null : projectId);
   };
 
-  const filterProjects = () => {
-    if (selectedTechnologies.length === 0) {
-      return projectData;
-    }
-
+  // ✅ Memoiza el filtrado
+  const filteredProjects = useMemo(() => {
+    if (!selectedTechnologies.length) return projectData;
     return projectData.filter((project) =>
       selectedTechnologies.every(
         (tech) =>
@@ -28,19 +26,41 @@ const Projects = ({ selectedTechnologies }) => {
           project.technologies.backend.includes(tech)
       )
     );
-  };
+  }, [selectedTechnologies]);
 
-  const filteredProjects = filterProjects();
-
+  // ✅ Pre-carga real: espera a que terminen TODAS las imágenes y entonces quita el loader
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+    let cancelled = false;
+
+    const preloadImages = (urls) =>
+      Promise.all(
+        urls.map(
+          (url) =>
+            new Promise((resolve) => {
+              const img = new Image();
+              img.onload = () => resolve(url);
+              img.onerror = () => resolve(url); // no bloquees por errores
+              img.src = url;
+            })
+        )
+      );
+
+    const urls = filteredProjects.flatMap((p) =>
+      (p.screenshots || []).map((s) => s.url)
+    );
+
+    setLoading(true);
+    preloadImages(urls).then(() => {
+      if (!cancelled) setLoading(false);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [filteredProjects]);
 
   return (
     <div>
-      {/* 🔹 Loader visible hasta que termine de cargar */}
       {loading ? (
         <div className="loader-projects"></div>
       ) : filteredProjects.length === 0 ? (
@@ -64,10 +84,14 @@ const Projects = ({ selectedTechnologies }) => {
               }}
             >
               <p>{project.title}</p>
+
               <img
                 src={project.screenshots[0].url}
                 alt={project.screenshots[0].caption}
+                loading="eager"
+                decoding="async"
               />
+
               {(hoveredProject === project.id ||
                 toggledProject === project.id) && (
                 <div className="project-description">{project.description}</div>
