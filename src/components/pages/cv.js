@@ -104,9 +104,16 @@ const CV = () => {
 
           <div className="cv-text-wrapper">
             <p>
-                I work as a Junior Software Developer at Bexen Cardio, where I continue to expand my technical skills and apply my knowledge in the development of digital solutions.
-                I have Full Stack Development training through Bottega University’s DevCamp, where I acquired the skills necessary to build complete web projects, from backend logic to frontend user experience.
-                In addition, I hold a Master’s degree in Leisure Project Management, a Bachelor’s degree in Political Science and Public Management, and have training in Big Data and Business Intelligence, which enables me to approach projects from a strategic and multidisciplinary perspective.
+              I work as a Junior Software Developer at Bexen Cardio, where I
+              continue to expand my technical skills and apply my knowledge in
+              the development of digital solutions. I have Full Stack
+              Development training through Bottega University’s DevCamp, where I
+              acquired the skills necessary to build complete web projects, from
+              backend logic to frontend user experience. In addition, I hold a
+              Master’s degree in Leisure Project Management, a Bachelor’s degree
+              in Political Science and Public Management, and have training in
+              Big Data and Business Intelligence, which enables me to approach
+              projects from a strategic and multidisciplinary perspective.
             </p>
 
             <a
@@ -127,7 +134,7 @@ const CV = () => {
               <strong>Age:</strong> {edad} Years
             </p>
             <p>
-              <strong>Location:</strong> Sopela, Bizkaia, Spain
+              <strong>Location:</strong> Getxo, Bizkaia, Spain
             </p>
             <p>
               <strong>Languages:</strong> Native Spanish / English / Basque
@@ -160,7 +167,8 @@ const CV = () => {
             <h2>EXPERIENCE</h2>
 
             <p>
-              <strong>Junior Software Developer:</strong> Bexen Cardio (2025-present)
+              <strong>Junior Software Developer:</strong> Bexen Cardio
+              (2025-present)
             </p>
             <p>
               <strong>Qualitative Research Technician:</strong> Kualitate
@@ -184,30 +192,30 @@ const CV = () => {
             <p>
               <strong>Email:</strong> jonmadariaga93@gmail.com
             </p>
-            <p>
-              <strong>Address:</strong> Plazarte, 45, Sopela, Bizkaia
-            </p>
           </div>
 
           <div className="section" ref={skillsRef}>
             <h2>SKILLS</h2>
-                <SkillBar skill="JavaScript" level={95} isVisible={skillsVisible} />
-                <SkillBar skill="Python" level={90} isVisible={skillsVisible} />
-                <SkillBar skill="React.js" level={90} isVisible={skillsVisible} />
-                <SkillBar skill="HTML5" level={90} isVisible={skillsVisible} />
-                <SkillBar skill="CSS" level={90} isVisible={skillsVisible} />
-                <SkillBar skill="Sass" level={90} isVisible={skillsVisible} />
-                <SkillBar skill="React Native" level={85} isVisible={skillsVisible} />
-                <SkillBar skill="Angular" level={80} isVisible={skillsVisible} />
-                <SkillBar skill="Node.js" level={80} isVisible={skillsVisible} />
-                <SkillBar skill="Git" level={80} isVisible={skillsVisible} />
-                <SkillBar skill="MySQL" level={80} isVisible={skillsVisible} />
-                <SkillBar skill="MongoDB" level={75} isVisible={skillsVisible} />
-                <SkillBar skill="REST APIs" level={75} isVisible={skillsVisible} />
-                <SkillBar skill="Azure" level={70} isVisible={skillsVisible} />
-                <SkillBar skill="Docker" level={70} isVisible={skillsVisible} />
-                <SkillBar skill="Deployment" level={70} isVisible={skillsVisible} /> 
-
+            <SkillBar skill="JavaScript" level={95} isVisible={skillsVisible} />
+            <SkillBar skill="Python" level={90} isVisible={skillsVisible} />
+            <SkillBar skill="React.js" level={90} isVisible={skillsVisible} />
+            <SkillBar skill="HTML5" level={90} isVisible={skillsVisible} />
+            <SkillBar skill="CSS" level={90} isVisible={skillsVisible} />
+            <SkillBar skill="Sass" level={90} isVisible={skillsVisible} />
+            <SkillBar
+              skill="React Native"
+              level={85}
+              isVisible={skillsVisible}
+            />
+            <SkillBar skill="Angular" level={80} isVisible={skillsVisible} />
+            <SkillBar skill="Node.js" level={80} isVisible={skillsVisible} />
+            <SkillBar skill="Git" level={80} isVisible={skillsVisible} />
+            <SkillBar skill="MySQL" level={80} isVisible={skillsVisible} />
+            <SkillBar skill="MongoDB" level={75} isVisible={skillsVisible} />
+            <SkillBar skill="REST APIs" level={75} isVisible={skillsVisible} />
+            <SkillBar skill="Azure" level={70} isVisible={skillsVisible} />
+            <SkillBar skill="Docker" level={70} isVisible={skillsVisible} />
+            <SkillBar skill="Deployment" level={70} isVisible={skillsVisible} />
           </div>
         </div>
       </div>
